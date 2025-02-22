@@ -1,10 +1,8 @@
-// src/App.tsx
-
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import GlobalStyles from "../../globalStyles";
-import Home from "../Home";
+import GlobalStyles from "../../styles/globalStyles";
+import Sections from "../../components/Sections";
 
 function HomePage() {
   return (
@@ -12,7 +10,7 @@ function HomePage() {
       <GlobalStyles />
       <Header />
       <Navbar />
-      <Home />
+      <Sections />
       <Footer />
     </>
   );
