@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as S from "./styles";
 import { sectionsData } from "./section-data";
-import { AnimatedSection } from "./AnimatedSection";
+import { AnimatedSection } from "../AnimatedSections";
 
 function Sections() {
   const [activeSections, setActiveSections] = useState<Set<string>>(new Set());

@@ -1,65 +1,68 @@
-import { Container, SectionTitle, ScheduleWrapper, ScheduleContainer, DayCard, EventItem } from "./styles";
-import { FiCalendar, FiClock } from "react-icons/fi"; // Ícones para cada item
-import { FaRegCalendarAlt } from "react-icons/fa"; // Ícones para cada item
-
+import { FiClock, FiMapPin } from "react-icons/fi";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import * as S from "./styles";
+import { SCHEDULE_DATA } from "./schedule-data";
 
 export function Schedule() {
   return (
-    <Container>
-      <SectionTitle>
-        <FiCalendar /> Programação do Evento
-      </SectionTitle>
+    <S.Container>
+      {/* Título principal */}
+      <S.MainTitle>PROGRAMAÇÃO</S.MainTitle>
 
-      <ScheduleWrapper>
-        <ScheduleContainer>
-          {/* Dia 1 - 10 de Junho */}
-          <DayCard >
-            <h3><FaRegCalendarAlt /> 10 de Junho</h3>
-            <EventItem>
-              <FiClock /> <strong>08:30 - 12:00</strong> | Recepção e Credenciamento
-            </EventItem>
-            <EventItem>
-              <FiClock /> <strong>09:00</strong> | Solenidade de Abertura
-            </EventItem>
-            <EventItem>
-              <FiClock /> <strong>09:30</strong> | Mesa 1
-            </EventItem>
-          </DayCard>
+      {/* Aqui fazemos o map para cada cidade */}
+      {SCHEDULE_DATA.map((cityItem, cityIndex) => (
+        <div key={cityIndex}>
+          {/* Título da cidade */}
+          <S.CityTitle>{cityItem.city}</S.CityTitle>
 
-          {/* Dia 2 - 11 de Junho */}
-          <DayCard >
-            <h3><FaRegCalendarAlt /> 11 de Junho</h3>
-            <EventItem>
-              <FiClock /> <strong>08:30 - 12:00</strong> | Grupos de Trabalho
-            </EventItem>
-            <EventItem>
-              <FiClock /> <strong>13:30 - 16:30</strong> | "Portas Abertas: O Futuro na UEA"
-            </EventItem>
-          </DayCard>
+          {/* Wrapper para permitir scroll horizontal */}
+          <S.ScheduleWrapper>
+            <S.ScheduleContainer>
+              {cityItem.dates.map((day, dayIndex) => (
+                <S.DaySection key={dayIndex}>
+                  <S.DayTitle>
+                    <FaRegCalendarAlt /> {day.date} <span>{day.day}</span>
+                  </S.DayTitle>
 
-          {/* Dia 3 - 12 de Junho */}
-          <DayCard >
-            <h3><FaRegCalendarAlt /> 12 de Junho</h3>
-            <EventItem>
-              <FiClock /> <strong>09:00</strong> | Fórum do Observatório da Cidadania
-            </EventItem>
-            <EventItem>
-              <FiClock /> <strong>14:00</strong> | Cine Debate: "Terra em Transe"
-            </EventItem>
-          </DayCard>
+                  {/* Percorre os eventos do dia */}
+                  {day.events.map((event, eventIndex) => (
+                    <S.EventItem key={eventIndex}>
+                      <S.EventTime>
+                        <FiClock /> {event.time}
+                      </S.EventTime>
+                      <S.EventTitle>{event.title}</S.EventTitle>
 
-          {/* Dia 4 - 13 de Junho */}
-          <DayCard >
-            <h3><FaRegCalendarAlt /> 13 de Junho</h3>
-            <EventItem>
-              <FiClock /> <strong>08:30 - 12:00</strong> | Atividade de Campo (Museu da Amazônia)
-            </EventItem>
-            <EventItem>
-              <FiClock /> <strong>16:00</strong> | Conferência de Encerramento
-            </EventItem>
-          </DayCard>
-        </ScheduleContainer>
-      </ScheduleWrapper>
-    </Container>
+                      {event.location && (
+                        <S.EventLocation>
+                          <FiMapPin /> {event.location}
+                        </S.EventLocation>
+                      )}
+
+                      {event.description && (
+                        <S.EventDescription>
+                          {event.description}
+                        </S.EventDescription>
+                      )}
+
+                      {event.speakers && (
+                        <S.SpeakerList>
+                          {event.speakers.map((speaker, i) => (
+                            <li key={i}>{speaker}</li>
+                          ))}
+                        </S.SpeakerList>
+                      )}
+
+                      {event.highlight && (
+                        <S.EventHighlight>{event.highlight}</S.EventHighlight>
+                      )}
+                    </S.EventItem>
+                  ))}
+                </S.DaySection>
+              ))}
+            </S.ScheduleContainer>
+          </S.ScheduleWrapper>
+        </div>
+      ))}
+    </S.Container>
   );
 }

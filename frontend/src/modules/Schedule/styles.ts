@@ -1,90 +1,128 @@
 import styled from "styled-components";
 import { colors } from "../../styles/color";
 
-export const Container = styled.div`
+/* Container principal */
+export const Container = styled.section`
   padding: 2rem;
-  background-color: ${colors.lightGreen}; /* Fundo suave */
-  color: ${colors.darkGray}; /* Texto principal */
-  border-radius: 12px;
-  max-width: 100%;
+  max-width: 900px;
   margin: auto;
-  text-align: center;
+  text-align: left;
 `;
 
-export const SectionTitle = styled.h2`
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  color: ${colors.primary};
+/* Título principal "PROGRAMAÇÃO" */
+export const MainTitle = styled.h1`
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: ${colors.black};
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+`;
+
+/* Nome da cidade (ex: MANAUS) */
+export const CityTitle = styled.h2`
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  color: ${colors.secondary};
+  font-weight: bold;
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 `;
 
 export const ScheduleWrapper = styled.div`
   width: 100%;
-  overflow-x: auto; /* Ativa o scroll horizontal */
-  padding-bottom: 1rem; /* Evita cortes no final */
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  white-space: nowrap; /* Evita quebra de linha */
 `;
 
+
+/* Container dos eventos */
 export const ScheduleContainer = styled.div`
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: nowrap; /* Mantém os cards na mesma linha */
-  min-width: fit-content; /* Garante que os itens fiquem dentro do scroll */
-  padding-left: 1rem; /* Evita corte do primeiro card */
-  padding-right: 2rem; /* Evita corte do último card */
-
-  @media (max-width: 768px) {
-    flex-direction: row; /* Mantém os cards lado a lado */
-  }
+  flex-direction: column; /* Deixe os dias organizados horizontalmente */
+  gap: 2rem;
+  white-space: nowrap;
 `;
 
-export const DayCard = styled.div`
-  background: ${colors.white};
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  min-width: 320px; /* Garante que os cards tenham tamanho adequado */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  h3 {
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-    color: ${colors.primary};
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+/* Seção de um dia */
+export const DaySection = styled.div`
+  min-width: 300px; /* Define um tamanho mínimo para cada seção */
+  border-left: 5px solid ${colors.primary};
+  padding-left: 1rem;
+  white-space: normal;
 `;
 
-export const EventItem = styled.div`
+
+/* Título do dia */
+export const DayTitle = styled.h3`
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: bold;
+  color: ${colors.primary};
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+
+  span {
+    font-size: 1rem;
+    color: ${colors.darkGray};
+  }
+`;
+
+/* Item de evento */
+export const EventItem = styled.div`
+  margin-bottom: 1rem;
+`;
+
+/* Hora do evento */
+export const EventTime = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  color: ${colors.secondary};
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+/* Título do evento */
+export const EventTitle = styled.h4`
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: ${colors.black};
+`;
+
+/* Descrição do evento */
+export const EventDescription = styled.p`
+  font-size: 1rem;
   color: ${colors.darkGray};
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: background 0.3s ease-in-out;
+  margin-top: 0.3rem;
+`;
 
-  &:hover {
-    background: rgba(0, 0, 0, 0.05);
-  }
+/* Lista de convidados */
+export const SpeakerList = styled.ul`
+  list-style: none;
+  margin-top: 0.3rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: ${colors.darkGray};
 
-  svg {
-    font-size: 1.2rem;
-    color: ${colors.secondary};
+  li {
+    margin-bottom: 0.3rem;
   }
+`;
 
-  strong {
-    color: ${colors.primary};
-  }
+/* Destaque para informações adicionais */
+export const EventHighlight = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  color: ${colors.secondary};
+  margin-top: 0.3rem;
+`;
+
+export const EventLocation = styled.p`
+  font-size: 1rem;
+  font-weight: bold;
+  color: ${colors.secondary};
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 `;

@@ -1,6 +1,8 @@
+import ContactSection from "../../modules/Contacts";
 import { Places } from "../../modules/Places";
 import { Presentation } from "../../modules/Presentation"
 import { Schedule } from "../../modules/Schedule";
+import Workgroups from "../../modules/WorkGroup";
 
 // **Dados das seções (poderia vir de um backend futuramente)**
 export const sectionsData = [
@@ -31,15 +33,7 @@ export const sectionsData = [
       id: "gts",
       title: "Grupos de Trabalho",
       content: "Confira os temas dos GTs e participe.",
-      component: () => (
-        <div>
-          <ul>
-            <li>GT1 - Cidadania e Direitos Humanos</li>
-            <li>GT2 - Sustentabilidade e Meio Ambiente</li>
-            <li>GT3 - Educação e Cultura</li>
-          </ul>
-        </div>
-      ),
+      component: Workgroups
     },
     {
       id: "programação",
@@ -70,18 +64,8 @@ export const sectionsData = [
     {
       id: "contatos",
       title: "Contatos",
-      content: "Email: contato@evento.com | Redes Sociais: Facebook | Instagram | YouTube",
-      component: () => (
-        <div>
-          <p><strong>Email:</strong> contato@evento.com</p>
-          <p><strong>Redes Sociais:</strong></p>
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=sB_LlDtB27k">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">YouTube</a></li>
-          </ul>
-        </div>
-      ),
+      content: "Confira nossa redes.",
+      component: ContactSection
     },
   ];
   

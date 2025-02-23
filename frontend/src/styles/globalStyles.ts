@@ -5,11 +5,11 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Karla, sans-serif;
+    font-family: Inter, sans-serif;
   }
 
   body {
-    font-family: Karla, sans-serif;
+    font-family: Inter, sans-serif;
     color: #333;
     background-size: cover;
     overflow-y: scroll; /* Garante que o scroll sempre apareça */
