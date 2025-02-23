@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
 export const HeaderImage = styled.img`
   width: 100%;
   height: fit-content; /* Ocupa quase toda a tela */
-  object-fit: fill; /* Garante que a imagem preencha o espaço sem distorcer */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
   z-index: 2000;
 `;
 

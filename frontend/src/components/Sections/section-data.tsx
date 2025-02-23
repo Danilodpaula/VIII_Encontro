@@ -1,3 +1,7 @@
+import { Places } from "../../modules/Places";
+import { Presentation } from "../../modules/Presentation"
+import { Schedule } from "../../modules/Schedule";
+
 // **Dados das seções (poderia vir de um backend futuramente)**
 export const sectionsData = [
     {
@@ -5,25 +9,13 @@ export const sectionsData = [
       title: "Apresentação",
       content:
         "O VIII Encontro de Perspectivas promove reflexões críticas sobre cidadania e democracia em tempos de crise.",
-      component: () => (
-        <div>
-          <p>O evento tem como objetivo principal estimular o pensamento crítico sobre os desafios sociais e políticos da atualidade.</p>
-        </div>
-      ),
+      component: Presentation
     },
     {
       id: "locais",
       title: "Locais",
       content: "O evento acontecerá em Manaus, Tefé e Parintins.",
-      component: () => (
-        <div>
-          <ul>
-            <li><strong>Manaus:</strong> Universidade X, Auditório A</li>
-            <li><strong>Tefé:</strong> Centro de Convenções Y</li>
-            <li><strong>Parintins:</strong> Instituto Cultural Z</li>
-          </ul>
-        </div>
-      ),
+      component: Places
     },
     {
       id: "submissao",
@@ -48,6 +40,12 @@ export const sectionsData = [
           </ul>
         </div>
       ),
+    },
+    {
+      id: "programação",
+      title: "Programação",
+      content: "Confira a programação do evento.",
+      component: Schedule
     },
     {
       id: "galeria",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import * as S from "./styles";
 import { sectionsData } from "./section-data";
+import { AnimatedSection } from "./AnimatedSection";
 
 function Sections() {
   const [activeSections, setActiveSections] = useState<Set<string>>(new Set());
@@ -16,7 +17,7 @@ function Sections() {
       return newActiveSections;
     });
 
-    // Seção clicada se torna visível apenas se não estiver na tela
+    // Faz scroll suave até o elemento clicado
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -30,8 +31,13 @@ function Sections() {
           <S.SectionTitle>{title}</S.SectionTitle>
           <S.SectionContent>{content}</S.SectionContent>
 
-          {/* Permite múltiplas seções abertas */}
-          {activeSections.has(id) && <S.SectionExpanded><Component /></S.SectionExpanded>}
+          {/** 
+           * Usamos um wrapper (S.AnimatedSection) que mede a altura do conteúdo
+           * e anima a transição de forma suave e sem travas.
+           */}
+          <AnimatedSection isOpen={activeSections.has(id)}>
+            <Component />
+          </AnimatedSection>
         </S.Section>
       ))}
     </S.HomeContainer>
