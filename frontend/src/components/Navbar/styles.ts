@@ -1,120 +1,137 @@
-// import styled from "styled-components";
-// import { colors } from "../../styles/color";
-
-// export const NavbarContainer = styled.nav<{ isOverImage: boolean }>`
-//   background-color: ${(props) => (props.isOverImage ? "transparent" : colors.primary)};
-//   padding-top: 1rem;
-//   padding-bottom: 1rem;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-//   box-shadow: ${(props) => (props.isOverImage ? "none" : "0px 4px 6px rgba(0, 0, 0, 0.2)")};
-//   transition: background-color 0.2s;
-//   position: fixed;
-//   top: 0;
-//   z-index: 3000;
-//   font-size: clamp(1rem, 2vw, 1.3rem);
-//   margin: 0;
-
-//   @media (max-width: 768px) {
-//     padding-left: 0;
-//     padding-right: 0;
-//   }
-// `;
-
-// export const NavList = styled.ul<{ isOverImage: boolean }>`
-//   display: flex;
-//   justify-content: center;
-//   gap: 1.5rem;
-//   list-style: none;
-//   padding: 1.2rem;
-//   overflow-x: auto; /* Adiciona rolagem horizontal quando necessário */
-//   white-space: nowrap; /* Impede quebra de linha */
-//   min-width: fit-content; /* Garante que os itens sempre fiquem visíveis */
-//   padding-left: 1rem; /* Espaçamento para evitar cortes */
-//   padding-right: 1rem; /* Espaçamento para evitar cortes */
-//   max-width: 100vw;
-
-//   /* Adiciona barra de rolagem horizontal apenas quando necessário */
-//   &::-webkit-scrollbar {
-//     height: 6px;
-//   }
-
-//   &::-webkit-scrollbar-thumb {
-//     background-color: ${colors.gray};
-//     border-radius: 10px;
-//   }
-
-//   li {
-//     transition: transform 0.2s;
-//   }
-
-//   li:hover {
-//     transform: translateY(-4px);
-//   }
-
-//   a {
-//     color: ${(props) => (props.isOverImage ? colors.white : colors.white)};
-//     text-decoration: none;
-//     font-size: clamp(0.9rem, 2vw, 1.2rem); /* Responsividade da fonte */
-//     font-weight: bold;
-//     padding: 12px 16px;
-//     background: ${(props) => (props.isOverImage ? "#2f6334" : "rgba(255, 255, 255, 0.2)")};
-//     border-radius: 16px;
-//     transition: 0.3s;
-//   }
-
-//   a:hover {
-//     background: ${colors.secondary};
-//     color: ${colors.white};
-//   }
-
-//   /* Navbar responsiva */
-//   @media (max-width: 1024px) {
-//     display: flex;
-//     overflow-x: auto; /* Rolagem horizontal ativada */
-//     white-space: nowrap; /* Mantém tudo em uma linha */
-//     width: 100%;
-//     min-width: 100vw;
-//   }
-// `;
-
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { colors } from "../../styles/color";
 
-export const NavbarContainer = styled.nav<{ isOverImage: boolean }>`
-  background-color: ${(props) => (props.isOverImage ? "transparent" : colors.primary)};
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+/* Container da Navbar */
+export const NavbarContainer = styled.nav<{
+  isOverImage: boolean;
+  isMobile: boolean;
+}>`
+  background-color: ${(props) =>
+    props.isOverImage ? "transparent" : colors.primary};
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  box-shadow: ${(props) => (props.isOverImage ? "none" : "0px 4px 6px rgba(0, 0, 0, 0.2)")};
-  transition: background-color 0.2s;
+  box-shadow: ${(props) =>
+    props.isOverImage ? "none" : "0px 4px 6px rgba(0, 0, 0, 0.2)"};
+  transition: background-color 0.3s ease-in-out;
   position: fixed;
   top: 0;
   z-index: 3000;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  margin: 0;
-  overflow-x: auto; /* Ativa o scroll horizontal */
-  white-space: nowrap; /* Garante que os itens fiquem sempre na mesma linha */
 `;
 
-export const NavList = styled.ul<{ isOverImage: boolean }>`
+/* Botão do Menu */
+export const MenuButton = styled.button`
+  z-index: 4000; /* Fica acima do NavList para ser sempre acessível */
+  background: none;
+  border: none;
+  color: ${colors.white};
+  font-size: 2rem;
+  cursor: pointer;
   display: flex;
-  gap: 1rem;
-  list-style: none;
-  padding: 1rem;
-  margin-bottom: 0;
-  overflow-x: auto; /* Ativa a rolagem horizontal */
-  scroll-behavior: smooth; /* Scroll suave */
-  white-space: nowrap; /* Mantém tudo em uma linha */
-  min-width: fit-content;
-  width: 100%;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+  
 
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  /* Some em telas grandes quando não estiver sobre a imagem */
+  @media (min-width: 1025px) {
+    display: none;
+  }
+`;
+
+/* Lista de Links de Navegação */
+export const NavList = styled.ul<{
+  isOpen: boolean;
+  isMobile: boolean;
+  isOverImage: boolean;
+}>`
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  /* 
+    Navbar normal em telas grandes quando fora da imagem:
+    exibe os itens em linha, sem overlay 
+  */
+  ${({ isMobile, isOverImage }) =>
+    !isMobile &&
+    !isOverImage &&
+    css`
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      position: static;
+      background: none;
+      width: auto;
+      gap: 1.5rem;
+      box-shadow: none;
+    `}
+
+  /*
+    Menu Sanduíche para telas pequenas ou quando "isOverImage" é true:
+    Fazemos o menu aparecer de forma fixa/deslizante na horizontal.
+  */
+  @media (max-width: 1024px), (max-width: 1600px) and (${({ isOverImage }) =>
+    isOverImage && "true"}) {
+    /* Para ocupar a altura total da tela (opcional) */
+    position: fixed;
+    top: 0;
+    /* Decide se quer que entre da direita ou da esquerda */
+    left: 0;
+    right: 0;
+
+    /* Altura e Largura */
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 6rem;
+    padding-right: 5rem;
+    /* Se quiser que ocupe mais espaço vertical, pode aumentar a height */
+
+    /* Transição horizontal: 
+       Se estiver fechado, translateX(100%) = fica "fora" da tela (à direita)
+       Se quiser que saia pela esquerda, use -100% e left: 0
+    */
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateX(0)" : "translateX(100%)"};
+    transition: transform 0.3s ease-in-out;
+
+    /* 
+       Coloca fundo para ficar visível. 
+       "overflow-x: auto" para permitir rolagem horizontal caso haja muitos itens.
+    */
+    background: ${colors.primary};
+    overflow-x: auto;
+    overflow-y: hidden; /* Para não ter rolagem vertical, se quiser */
+
+    /* 
+       Quando está fechado, podemos desabilitar clique.
+       isOpen => pointer-events: auto
+    */
+    pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
+
+    /* Ajusta exibição dos itens na horizontal */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    /* 
+      Opcional: se quiser reservar um espaço fixo 
+      para o botão de fechar, adicione padding
+    */
+    /* padding: 0 3rem 0 1rem;  */
+  }
+
+  /* Animação de hover */
   li {
     transition: transform 0.2s;
   }
@@ -124,14 +141,23 @@ export const NavList = styled.ul<{ isOverImage: boolean }>`
   }
 
   a {
+    z-index: 5000;
     color: ${colors.white};
     text-decoration: none;
     font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: bold;
     padding: 12px 16px;
-    background: ${(props) => (props.isOverImage ? "#2f6334" : "rgba(255, 255, 255, 0.2)")};
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     transition: 0.3s;
+    display: block;
+    text-align: center;
+    white-space: nowrap; /* Evita quebrar linha no item */
+
+    @media (max-width: 1024px) {
+      /* Aqui você decide se quer que cada link ocupe mais ou menos espaço */
+      width: auto;
+    }
   }
 
   a:hover {
@@ -139,4 +165,3 @@ export const NavList = styled.ul<{ isOverImage: boolean }>`
     color: ${colors.white};
   }
 `;
-
