@@ -9,13 +9,13 @@ const Exhibition: React.FC = () => {
       <S.Introduction>{EXHIBITION_CONTENT.introduction}</S.Introduction>
 
       {EXHIBITION_CONTENT.sections.map((section, index) => (
-        <S.Section key={index}>
+        <S.Section key={index} bgImage={section.image}>
           {/* Se a imagem existir, exibe ela */}
-          {section.image && (
-            <S.ImageContainer>
+          {/* {section.image && (
+            <S.ImageContainer >
               <S.Image src={section.image} alt={section.heading} />
             </S.ImageContainer>
-          )}
+          )} */}
 
           <S.TextContent>
             <S.Region>{section.region}</S.Region>

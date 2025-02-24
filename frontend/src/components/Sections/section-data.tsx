@@ -1,5 +1,6 @@
 import ContactSection from "../../modules/Contacts";
 import Exhibition from "../../modules/Exhibition";
+import Gallery from "../../modules/Gallery";
 import { Places } from "../../modules/Places";
 import { Presentation } from "../../modules/Presentation"
 import { Schedule } from "../../modules/Schedule";
@@ -46,11 +47,7 @@ export const sectionsData = [
       id: "galeria",
       title: "Galeria",
       content: "Fotos e vídeos das edições anteriores.",
-      component: () => (
-        <div>
-          <p>Acesse nosso acervo de fotos e vídeos das edições passadas do Encontro de Perspectivas.</p>
-        </div>
-      ),
+      component: Gallery
     },
     {
       id: "exposicao",

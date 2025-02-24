@@ -35,7 +35,10 @@ function Sections() {
            * Usamos um wrapper (S.AnimatedSection) que mede a altura do conteúdo
            * e anima a transição de forma suave e sem travas.
            */}
-          <AnimatedSection isOpen={activeSections.has(id)}>
+          <AnimatedSection isOpen=
+          // {activeSections.has(id)}
+          {true}
+          >
             <Component />
           </AnimatedSection>
         </S.Section>
