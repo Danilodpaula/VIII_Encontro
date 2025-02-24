@@ -30,7 +30,7 @@ export const Title = styled.h2`
   Container de cada item do "acordeão"
 */
 export const AccordionItem = styled.div`
-  border: 1px solid ${colors.primary};
+  border: 1.5px solid ${colors.primary};
   border-radius: 8px;
   overflow: hidden; /* importante para caso queira animação */
   background-color: #fefefe;
@@ -61,6 +61,12 @@ export const AccordionHeader = styled.div`
   }
 `;
 
+export const TitleAndCoordination = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+`;
+
 /* Título do GT */
 export const GTTitle = styled.h3`
   margin: 0;
@@ -71,7 +77,6 @@ export const GTTitle = styled.h3`
 
 export const Coordination = styled.span`
   font-size: clamp(0.9rem, 2vw, 1rem);
-  margin-left: 2rem;
   opacity: 0.9;
 
   white-space: normal; // deixa o texto quebrar

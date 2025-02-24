@@ -1,4 +1,5 @@
 import ContactSection from "../../modules/Contacts";
+import Exhibition from "../../modules/Exhibition";
 import { Places } from "../../modules/Places";
 import { Presentation } from "../../modules/Presentation"
 import { Schedule } from "../../modules/Schedule";
@@ -55,11 +56,7 @@ export const sectionsData = [
       id: "exposicao",
       title: "Exposição",
       content: "Instalação multimídia sobre o tema do evento.",
-      component: () => (
-        <div>
-          <p>A exposição contará com instalações interativas abordando o impacto social e político das crises contemporâneas.</p>
-        </div>
-      ),
+      component: Exhibition
     },
     {
       id: "contatos",

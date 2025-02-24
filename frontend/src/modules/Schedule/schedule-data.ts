@@ -1,12 +1,10 @@
-// schedule-data.ts (exemplo)
-
-export interface IEvent {
+  export interface IEvent {
     time: string;
     title: string;
-    location?: string;      // opcional
-    description?: string;   // opcional
-    highlight?: string;     // opcional
-    speakers?: string[];    // opcional
+    location?: string;      // Local do evento (opcional)
+    description?: string;   // Descrição extra (opcional)
+    highlight?: string;     // Destaques do evento (opcional)
+    speakers?: string[];    // Lista de palestrantes (opcional)
   }
   
   export interface IDay {
@@ -20,146 +18,70 @@ export interface IEvent {
     dates: IDay[];
   }
   
-
-export const SCHEDULE_DATA: ICity[] = [
+  export const SCHEDULE_DATA: ICity[] = [
     {
       city: "Manaus",
       dates: [
         {
-          date: "28/11",
+          date: "10/06",
+          day: "Segunda-feira",
+          events: [
+            { time: "08:00 - 12:00", title: "Recepção e Credenciamento", location: "CCPA" },
+            { time: "09:00", title: "Solenidade de abertura do VIII Encontro de Perspectivas", location: "CCPA" },
+            { time: "09:00", title: "Abertura da Instalação 'Experienciar a cidadania numa Terra em Transe'", location: "CCPA" },
+            { time: "10:00", title: "Mesa 1 – Cidadania e Emergência Climática", location: "CCPA" },
+            { time: "12:00", title: "Almoço" },
+            { time: "14:30", title: "Mesa 2 – Não! não escute o negacionismo científico", location: "CCPA" },
+            { time: "17:00", title: "Café com Conversa", location: "CCPA" },
+            { time: "17:20", title: "Atividade Cultural 1", location: "CCPA" },
+            { time: "18:00", title: "Encerramento", location: "CCPA" },
+          ],
+        },
+        {
+          date: "11/06",
           day: "Terça-feira",
           events: [
-            {
-              time: "08:30 - 09:00",
-              title: "Credenciamento",
-              location: "Auditório ENS/UEA",
-            },
-            {
-              time: "09:00",
-              title: "Solenidade de abertura do Evento",
-            },
-            {
-              time: "09:30",
-              title: "Mesa de Abertura: Povos Originários e Negritude em Perspectiva no Amazonas",
-              speakers: [
-                "Eliésio Marubo - Advogado e Assessor Jurídico da UNIVAJA",
-                "Luciana Santos - Ma. em Direito Constitucional e integrante do Grupo de Pesquisa Direito e Realidade Brasileira (UFU)",
-              ],
-              highlight:
-                "Mediação: Dra. Gimima Silva – Observatório da Cidadania e Relações de Poder - PPGICH/UEA",
-            },
-            {
-              time: "11:30",
-              title: "Abertura da Exposição: 'O Brasil em Perspectiva – 10 anos de memória de uma 'Democracia Imperfeita'",
-              speakers: [
-                "Dra. Gimima Silva e Dr. Otávio Rios (Observatório da Cidadania e Relações de Poder - PPGICH/UEA)",
-              ],
-            },
-            {
-              time: "12:00",
-              title: "Almoço",
-            },
-            {
-              time: "14:00",
-              title: "Mesa 1 - Cultura, Cidadania e Relações de Poder",
-              location: "ENS/UEA",
-              speakers: [
-                "Dr. Djalma Thürler (UFBA) - Grupo Teatral Atelier Voador",
-                "Dra. Kênia Gonçalves Costa (UFNT)",
-                "Dra. Lúcia Puga (PPGICH/UEA)",
-                "Michele Andrews (Coordenadora do Escritório Estadual do MINC no Amazonas)",
-              ],
-              highlight:
-                "Mediação: Dr. Otávio Rios – Observatório da Cidadania e Relações de Poder - PPGICH/UEA",
-            },
-            {
-              time: "16:00",
-              title: "Café com Conversa",
-            },
-            {
-              time: "16:15",
-              title: "Mesa 2 – Protagonismo Negro e Letramento Racial: dimensões culturais e políticas",
-              location: "ENS/UEA",
-              speakers: [
-                "Keilah Maria da Silva Fonseca (Associação Crioulas do Quilombo Urbano do Barranco de São Benedito)",
-                "Ma. Bárbara Barboza (OXFAM-Brasil)",
-                "Profa. Dra. Rosa Elizabeth Acevedo Marin (NAEA/UFPA)",
-                "Ma. Cristiane Sobral Correa Jesus (MINC)",
-                "Prof. Dr. Reginaldo Conceição da Silva (Núcleo de Cartografia Social da Amazônia/UEA)",
-              ],
-              highlight:
-                "Mediação: Edicleuza Costa Ribeiro – Mestranda PPGICH/UEA",
-            },
-            {
-              time: "18:15 - 19:00",
-              title: "Atividade Cultural – Performance: Abayomis a resistência da mulher preta",
-              location: "ENS/UEA",
-              speakers: ["Atriz convidada: Karen Kristine"],
-            },
+            { time: "09:00 - 17:00", title: "Visitação à Instalação 'Experienciar a cidadania numa Terra em Transe'", location: "CCPA" },
+            { time: "09:00 - 12:00", title: "Atividade de Campo - Visita guiada ao Museu da Amazônia (MUSA)", location: "MUSA" },
+            { time: "09:00 - 12:00", title: "GTs – Apresentação de Comunicações em Grupos de Trabalho", location: "CCPA/CEST/CESP" },
+            { time: "12:00", title: "Almoço" },
+            { time: "14:30", title: "Mesa 3 – Dimensões socioeconômicas e políticas das mudanças climáticas", location: "CCPA" },
+            { time: "17:00", title: "Café com Conversa", location: "CCPA" },
+            { time: "17:20", title: "Atividade Cultural 2", location: "CCPA" },
+            { time: "18:00", title: "Encerramento", location: "CCPA" },
           ],
         },
-        // Você pode adicionar mais dias para Manaus aqui...
-      ],
-    },
-    {
-      city: "Tefé",
-      dates: [
         {
-          date: "29/11",
+          date: "12/06",
           day: "Quarta-feira",
           events: [
-            {
-              time: "09:00",
-              title: "GT Tefé",
-              location: "Sala 06 CEST/UEA",
-              description: "GT 7 – Práticas e experiências educacionais em contextos amazônicos",
-            },
-            {
-              time: "15:00",
-              title: "Oficina: Produção Audiovisual",
-              location: "Sala 16 CEST/UEA",
-              speakers: ["Esp. George da Silva - Mestrando PPGICH/UEA"],
-            },
-            {
-              time: "16:00",
-              title: "Programação Cultural e Coffee Break",
-              description: "Apresentação de Música (MPB, MPA e Rock)",
-            },
+            { time: "09:00 - 17:00", title: "Visitação à Instalação 'Experienciar a cidadania numa Terra em Transe'", location: "CCPA" },
+            { time: "09:00 - 12:00", title: "GTs – Apresentação de Comunicações em Grupos de Trabalho", location: "CCPA/CEST/CESP" },
+            { time: "09:00 - 11:30", title: "Portas Abertas: o futuro na UEA", location: "CCPA/ENS" },
+            { time: "12:00", title: "Almoço" },
+            { time: "14:00 - 17:00", title: "Minicursos", location: "A definir" },
+            { time: "14:00", title: "Cine Debate - Projeção do filme 'Terra em Transe'", location: "Casarão de Ideias" },
+            { time: "15:50", title: "Café com Conversa", location: "Casarão de Ideias" },
+            { time: "16:10", title: "Mesa 4 - Análise de Terra em Transe pelas lentes do Brasil contemporâneo", location: "Casarão de Ideias" },
+            { time: "18:00", title: "Atividade Cultural 3", location: "Casarão de Ideias" },
+            { time: "18:30", title: "Encerramento", location: "Casarão de Ideias" },
           ],
         },
         {
-          date: "30/11",
+          date: "13/06",
           day: "Quinta-feira",
           events: [
-            {
-              time: "15:00",
-              title: "Palestra: A imaginação criadora de Gaston Bachelard",
-              location: "Sala 16 CEST/UEA",
-              speakers: ["Prof. Dr. Yomarley Holanda – Subcoordenador PPGICH/UEA"],
-              highlight: "Mediação: Rodolfo Santos Nunes – Mestrando PPGICH/UEA",
-            },
+            { time: "09:00 - 17:00", title: "Visitação à Instalação 'Experienciar a cidadania numa Terra em Transe'", location: "CCPA" },
+            { time: "09:00 - 12:00", title: "GTs – Apresentação de Comunicações em Grupos de Trabalho", location: "CCPA/CEST/CESP" },
+            { time: "12:00", title: "Almoço" },
+            { time: "14:00 - 16:30", title: "Fórum do Observatório da Cidadania e Relações de Poder: 'Emergência Climática e a cidadania em Transe de Norte a Sul'", location: "CCPA" },
+            { time: "16:30", title: "Café com Conversa", location: "CCPA" },
+            { time: "16:50", title: "Lançamento de Livros", location: "CCPA" },
+            { time: "17:50", title: "Premiação dos melhores Trabalhos em GT’s", location: "CCPA" },
+            { time: "18:20", title: "Atividade Cultural 4", location: "CCPA" },
+            { time: "19:00", title: "Encerramento", location: "CCPA" },
           ],
         },
-        // Outros dias para Tefé...
-      ],
-    },
-    {
-      city: "Parintins",
-      dates: [
-        {
-          date: "01/12",
-          day: "Sexta-feira",
-          events: [
-            {
-              time: "15:00",
-              title: "Palestra: A imaginação criadora de Gaston Bachelard",
-              location: "Sala 16 CEST/UEA",
-              speakers: ["Prof. Dr. Yomarley Holanda – Subcoordenador PPGICH/UEA"],
-              highlight: "Mediação: Rodolfo Santos Nunes – Mestrando PPGICH/UEA",
-            },
-          ],
-        },
-        // Outros dias para Parintins...
       ],
     },
   ];

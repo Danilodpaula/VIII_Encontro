@@ -23,7 +23,7 @@ export const GT_DATA = [
     title:
       "GT 3 - Religiões, festas, folclore e cultura popular no Norte do Brasil (Manaus/Parintins)",
     coordination:
-      "Prof. Dr. Diego Omar da Silveira (CESP/UEA); Prof. Dr. Luiz Antonio Guerra (UFAM) (Parintins); Profa. Ma. Dayanne Dagnaisser (PPGICH/UEA) (Manaus)",
+      "Prof. Dr. Diego Omar da Silveira (CESP/UEA); Prof. Dr. Luiz Antonio Guerra (UFAM) (Parintins); Profa. Ma. Dayanne Dagnaisser (PPGICH/UEA) (Manaus);  Profa. Dra. Marilina Conceição Oliveira B. S. Pinto (PPGS/UFAM)",
     description: `Os estudos recentes sobre a formação do pensamento social na Amazônia trouxeram à tona a necessidade de revisitar criticamente os clássicos. Reavivaram, consequentemente, o interesse por temas como religiões, festas, folclore e cultura popular na Região Norte, que no passado tinham sido temas de eruditos e intelectuais que propuseram, em suas etnografias e ensaios, modelos interpretativos que viriam a se tornar canônicos. 
 
 Há algumas décadas, a validade explicativa desses trabalhos vem sendo questionada, um quadro adensado mais recentemente com a expansão e interiorização da universidade, a sistematização de novas fontes e a emergência de novos sujeitos/protagonistas das pesquisas. 

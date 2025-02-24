@@ -30,8 +30,10 @@ const Workgroups: React.FC = () => {
         return (
           <S.AccordionItem key={gt.title}>
             <S.AccordionHeader onClick={(e) => handleToggle(index, e)}>
+            <S.TitleAndCoordination>
               <S.GTTitle>{gt.title}</S.GTTitle>
               <S.Coordination>{gt.coordination}</S.Coordination>
+              </S.TitleAndCoordination>
               <S.Icon>
                 {isOpen ? <FiChevronUp size={20} /> : <FiChevronDown size={20} />}
               </S.Icon>
