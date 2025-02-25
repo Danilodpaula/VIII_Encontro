@@ -36,8 +36,7 @@ function Sections() {
            * e anima a transição de forma suave e sem travas.
            */}
           <AnimatedSection isOpen=
-          // {activeSections.has(id)}
-          {true}
+          {activeSections.has(id)}
           >
             <Component />
           </AnimatedSection>

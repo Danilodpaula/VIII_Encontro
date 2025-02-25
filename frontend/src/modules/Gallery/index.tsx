@@ -5,7 +5,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 
-import { GalleryContainer, Title, CarouselWrapper, Caption } from "./styles";
+import { GalleryContainer, Title, CarouselWrapper } from "./styles";
 import { galleryData } from "./gallery-data";
 
 const Gallery: React.FC = () => {
