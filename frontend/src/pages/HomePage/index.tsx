@@ -1,17 +1,20 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import GlobalStyles from "../../styles/globalStyles";
+import OrganizersCarrousel from "../../components/OrganizersCarrousel";
 import Sections from "../../components/Sections";
+import { PageContainer } from "./styles";
 
 function HomePage() {
   return (
     <>
-      <GlobalStyles />
-      <Header />
       <Navbar />
-      <Sections />
-      <Footer />
+      <PageContainer>
+        <Header />
+        <Sections />
+        {/* <OrganizersCarrousel /> */}
+        <Footer />
+      </PageContainer>
     </>
   );
 }

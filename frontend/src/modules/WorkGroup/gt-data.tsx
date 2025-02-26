@@ -17,7 +17,17 @@ export const GT_DATA = [
     title: "GT 2 - Migrações na Amazônia na atualidade (Manaus)",
     coordination:
       "Profa. Dra. Carla Monteiro de Souza (UFRR); Profa. Dra. Lúcia Marina Puga Ferreira (PPGICH/UEA); Ma. Geysa Moura (CRESS/AM)",
-    description: `Descrição: A confirmar`,
+    description: `O estado do Amazonas guarda a maior diversidade linguística do Brasil com pouco mais de 60 línguas indígenas faladas em seu território (Oliveira e Justiniano 2022, 60), o que significa um terço das línguas autóctones ainda faladas no Brasil. 
+  
+  Ao lado dessas são ainda faladas línguas de sinais que são escassamente estudadas (Ferreira 2023, 40-1). Essa diversidade é completada pelas variedades da língua portuguesa faladas no estado e que apresentam características próprias (Cruz, 2010) e pelas línguas de imigração como o japonês e o espanhol venezuelano, sobre os quais não há estudos sistemáticos. 
+  
+  A cada língua falada, associam-se conhecimentos ímpares que dizem respeito não apenas às estruturas próprias de cada uma, mas a suas culturas, ao seu modo de ver o mundo, às estruturas e capacidades cognitivas das sociedades que as falam e, importante enfatizar, ao conhecimento sobre o mundo natural, ou seja, sobre o bioma amazônico. 
+  
+  Sobre esse último conhecimento, Cámara-Leret e Bascompte (2021) demonstraram que muito do conhecimento sobre um bioma é conhecido em apenas uma língua e que a extinção de uma língua leva, necessariamente, à perda de conhecimento sobre a biodiversidade. 
+  
+  Portanto, trabalhar pelo maior conhecimento e pela preservação de línguas em um momento de mudanças climáticas é, em certo sentido, trabalhar pela própria preservação do ambiente. 
+  
+  Nesse sentido, o GT Descrição e Análise da Diversidade Linguística Amazônica e suas Interfaces incentiva fortemente a submissão de trabalhos linguísticos descritivos sobre as línguas faladas na Amazônia, e sobretudo no Amazonas, que se associem às áreas como a Etnolinguística, a Linguística Histórica, as Línguas em Contato, a Tipologia Linguística, a Sociolinguística, a Dialetologia e a Linguística Aplicada, assim como a outras áreas que tomem a descrição e os dados linguísticos como sua fonte.`,
   },
   {
     title:
@@ -50,16 +60,26 @@ Esse conhecimento também se relaciona diretamente com o bioma amazônico, e est
 Portanto, trabalhar pelo conhecimento e preservação das línguas é trabalhar pela preservação do próprio ambiente. O GT incentiva fortemente a submissão de trabalhos linguísticos descritivos sobre as línguas faladas na Amazônia, especialmente no Amazonas, e suas interações com Etnolinguística, Linguística Histórica, Línguas em Contato, Tipologia Linguística, Sociolinguística e Linguística Aplicada.`,
   },
   {
-    title:
-      "GT 5 - Paisagens, vestígios: Amazônia do passado e do presente (Manaus)",
+    title: "GT 5 – Em construção (Manaus)",
     coordination:
-      "Profa. Dra. Tatiana de Lima Pedrosa Santos (PPGICH/UEA); Ma. Lauriane (egressa PPGICH/UEA – doutoranda UFRJ); Samuel Lucena de Mederos (egresso PPGICH/UEA – doutorando – PPGH/UFAM)",
-    description: `Em construção.`,
+      "Profa. Dra. Tatiana de Lima Pedrosa (PPGICH/UEA – SEC); Me. Samuel Luzeiro Lucena de Medeiros (Doutorando PPGH/UFAM); Ma. Lauriane Teixeira de Oliveira (Doutoranda PPGSA/UFRJ); Ma. Calina Ramos de Brito Souto (UFAM)",
+    description: `O Grupo de Trabalho está voltado a reflexões que estudem, sob as perspectivas arqueológica, histórica, antropológica e interdisciplinar das Ciências Humanas, temas relativos à culturas, memórias, identidades e patrimônios das populações da Bacia Amazônica. 
+  
+  Contempla, assim, contextos materiais e imateriais, históricos, museais, sociais, orais, educacionais, de resistência, entre tantas outras manifestações abrangentes, pautadas em fenômenos culturais muito próprios da dinâmica amazônica. 
+  
+  Assim, as origens e organizações das populações amazônicas ao longo do tempo, processos de colonização, permanências e mudanças históricas, diversidades etnoculturais, manifestações religiosas e populares, processos de urbanização, desafios da contemporaneidade, entre outras temáticas, são algumas das possibilidades de alinhamento das pesquisas com este GT.`,
   },
   {
-    title: "GT 6 – A Confirmar (Tefé)",
+    title:
+      "GT 6 - Paisagens, vestígios: Amazônia do passado e do presente (Parintins)",
     coordination:
-      "Prof. Dr. Yomarley Holanda (PPGICH/UEA); Profa. Dra. Monica (PPGICH/UEA)",
-    description: `Em construção.`,
+      "Dra. Clarice Bianchezzi – (História - CESP/UEA); Dr. José Camilo Ramos – (Geografia e PROFÁGUA - CESP/UEA)",
+    description: `Este GT nasce das pesquisas e discussões desenvolvidas no âmbito do Grupo de Pesquisas em Educação, Patrimônio, Arqueometria e Ambiente na Amazônia (GEPIA), articulando a multidisciplinaridade. 
+  
+  O objetivo é compreender o ambiente amazônico e a atuação humana neste espaço, transformando, ressignificando e registrando os vestígios arqueológicos na paisagem e as recorrências de fixação dos grupos humanos em espaços geográficos tanto no período pré-colonial como nos dias de hoje, que elegem as áreas ribeirinhas dos rios, proximidades com nascentes de água, riqueza de frutos e pescados, locais estratégicos para fixação e cultivo agrícola. 
+  
+  Serão bem-vindos trabalhos que discutam a presença humana no passado e presente na Amazônia, os vestígios e significações do ambiente, da paisagem, dos resquícios arqueológicos. 
+  
+  Também abordagens sobre fontes para a História da Amazônia que se apresentam sobre e/ou sob o solo, a floresta, as curvas dos rios, ao longo do território amazônico e que têm significado para os grupos passados, como suas ressignificações na atualidade.`,
   },
 ];

@@ -31,7 +31,7 @@ export const Title = styled.h2`
 */
 export const AccordionItem = styled.div`
   border: 1.5px solid ${colors.primary};
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden; /* importante para caso queira animação */
   background-color: #fefefe;
 

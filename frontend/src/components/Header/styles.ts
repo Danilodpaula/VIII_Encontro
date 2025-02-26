@@ -2,36 +2,70 @@ import styled from "styled-components";
 import { colors } from "../../styles/color";
 
 export const HeaderContainer = styled.header`
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  overflow: hidden;
 `;
 
-export const HeaderImage = styled.img`
+export const SlidingImagesContainer = styled.div`
+  position: absolute;
   width: 100%;
-  height: fit-content; /* Ocupa quase toda a tela */
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-  z-index: 2000;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+`;
+
+export const SlidingImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
 `;
 
 export const HeaderContent = styled.div`
   text-align: center;
-  padding: 20px;
-  background: ${colors.secondary}; /* Adiciona um fundo para separar do resto da página */
   color: ${colors.white};
-  width: 100%;
+  max-width: 90%;
+  /* backdrop-filter: blur(8px); */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 4px;
+
 
   h1 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: bold;
     text-transform: uppercase;
   }
 
   h2 {
-    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 500;
     margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 `;

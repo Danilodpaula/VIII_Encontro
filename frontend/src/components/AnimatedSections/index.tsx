@@ -6,7 +6,7 @@ const Container = styled.div<{
   $shouldAnimate: boolean;
 }>`
   overflow: hidden;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.8s ease-in-out;
   height: ${({ $height }) => ($height === "auto" ? "auto" : `${$height}px`)};
 `;
 

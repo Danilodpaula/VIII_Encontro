@@ -9,7 +9,7 @@ justify-content: center;
   padding: 15px;
   background-color: ${colors.primary};
   color: ${colors.white};
-  position: fixed;
+  position: static;
   width: 100%;
   bottom: 0;
   z-index: 1000; /* Mantém acima de outros elementos */

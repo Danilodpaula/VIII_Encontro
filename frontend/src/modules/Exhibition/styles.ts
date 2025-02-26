@@ -56,7 +56,7 @@ export const Section = styled.div<ImageContainerProps>`
   margin-bottom: 3rem;
   background: ${colors.lightGray};
   padding: clamp(1rem, 2vw, 1.5rem);
-  border-radius: 8px;
+  border-radius: 4px;
 
   background-image: url(${(props) => props.bgImage});
   background-position: center;
@@ -81,7 +81,7 @@ export const ImageContainer = styled.div`
   max-width: clamp(250px, 30vw, 300px);
   height: clamp(180px, 25vw, 200px);
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 4px;
 `;
 
 /* Imagem */
@@ -89,7 +89,7 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
 `;
 
 /* Texto da Seção */

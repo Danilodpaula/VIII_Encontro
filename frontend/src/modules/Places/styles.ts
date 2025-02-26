@@ -3,7 +3,7 @@ import { colors } from "../../styles/color";
 
 export const Container = styled.div`
   padding: 2rem;
-  background-color: ${colors.lightGreen}; /* Fundo leve */
+  
   color: ${colors.darkGray}; /* Texto principal */
   border-radius: 12px;
   max-width: 900px;
@@ -13,7 +13,8 @@ export const Container = styled.div`
 
 export const SectionTitle = styled.h2`
   font-size: clamp(2rem, 5vw, 2.8rem);
-  color: ${colors.primary};
+  color: ${colors.black};
+  font-weight: bold;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -70,7 +71,7 @@ export const MapButton = styled.a`
   text-decoration: none;
   font-weight: bold;
   padding: 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: 4px;
   margin-top: 1rem;
   transition: background 0.3s ease-in-out;
 

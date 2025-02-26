@@ -47,7 +47,7 @@ export const ContactItem = styled.li`
   align-items: center;
   background: ${colors.lightGray}; /* Fundo sutil */
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.2s;
 

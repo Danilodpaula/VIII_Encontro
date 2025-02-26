@@ -10,15 +10,15 @@ import Workgroups from "../../modules/WorkGroup";
 export const sectionsData = [
     {
       id: "apresentacao",
-      title: "Apresentação",
+      title: "",
       content:
-        "O VIII Encontro de Perspectivas promove reflexões críticas sobre cidadania e democracia em tempos de crise.",
+        "",
       component: Presentation
     },
     {
       id: "locais",
-      title: "Locais",
-      content: "O evento acontecerá em Manaus, Tefé e Parintins.",
+      title: "",
+      content: "",
       component: Places
     },
     {
@@ -34,7 +34,7 @@ export const sectionsData = [
     {
       id: "gts",
       title: "Grupos de Trabalho",
-      content: "Confira os temas dos GTs e participe.",
+      content: "Confira os temas dos GT's.",
       component: Workgroups
     },
     {
@@ -52,7 +52,7 @@ export const sectionsData = [
     {
       id: "exposicao",
       title: "Exposição",
-      content: "Instalação multimídia sobre o tema do evento.",
+      content: "Aprofunde-se nas discussões e perspectivas centrais deste evento.",
       component: Exhibition
     },
     {

@@ -3,7 +3,6 @@ import { colors } from "../../styles/color";
 
 export const Container = styled.div`
   padding: 2rem;
-  background-color: ${colors.lightGreen}; /* Fundo leve */
   color: ${colors.darkGray}; /* Cor principal do texto */
   border-radius: 12px;
   max-width: 900px;
@@ -12,7 +11,8 @@ export const Container = styled.div`
 
 export const SectionTitle = styled.h2`
   font-size: clamp(2rem, 5vw, 3rem);
-  color: ${colors.primary};
+  color: ${colors.black};
+  font-weight: bold;
   text-align: center;
   margin-bottom: 1.5rem;
 `;
@@ -38,7 +38,7 @@ export const TextBlock = styled.div`
   line-height: 1.6;
   background-color: ${colors.lightGray}; /* Fundo leve para destaque */
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
 
   h3 {

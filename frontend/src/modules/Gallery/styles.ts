@@ -46,5 +46,5 @@ export const Caption = styled.p`
   margin-top: 1rem;
   background: rgba(0, 0, 0, 0.5);
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
 `;
