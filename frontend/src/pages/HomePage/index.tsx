@@ -1,7 +1,7 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Navbar from "../../components/Navbar";
-import OrganizersCarrousel from "../../components/OrganizersCarrousel";
+// import OrganizersCarrousel from "../../components/OrganizersCarrousel";
 import Sections from "../../components/Sections";
 import { PageContainer } from "./styles";
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import * as S from "./styles";
 import cartaz1 from "../../assets/cartaz_viii_encontro.jpg";
@@ -8,11 +8,11 @@ import cartaz2 from "../../assets/leito_rio_seco.jpeg";
 const images = [cartaz1, cartaz2, cartaz1, cartaz2]; // Repete para criar efeito contínuo
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      // setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("resize", handleResize);
