@@ -1,83 +1,154 @@
-import { useEffect } from "react";
+/* =======================
+   Header.tsx
+   ======================= */
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import * as S from "./styles";
-import cartaz1 from "../../assets/cartaz_viii_encontro.jpg";
-import cartaz2 from "../../assets/leito_rio_seco.jpeg";
-// import cartaz3 from "../../assets/cartaz3.jpg";
-
-const images = [cartaz1, cartaz2, cartaz1, cartaz2]; // Repete para criar efeito contínuo
+import cartaz1 from "../../assets/Group 1.png";
+import { AiOutlineExport } from "react-icons/ai";
 
 const Header = () => {
-  // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Abre o modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Fecha o modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const handleResize = () => {
-      // setIsMobile(window.innerWidth < 768);
+      // Ajustes responsivos, se necessário
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Quando o estado do modal muda, bloqueia/desbloqueia scroll do body
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden"; // Bloqueia scroll
+    } else {
+      document.body.style.overflow = "auto"; // Restaura scroll
+    }
+  }, [isModalOpen]);
+
   return (
     <S.HeaderContainer>
-      <S.SlidingImagesContainer>
-        <motion.div
-          id="header-image"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{ repeat: Infinity, duration: 16, ease: "linear" }}
-          style={{ display: "flex", width: "200%" }}
-        >
-          {images.map((img, index) => (
-            <S.SlidingImage key={index} src={img} alt={`Slide ${index + 1}`} />
-          ))}
-        </motion.div>
+      {/* Imagem de fundo */}
+      <S.SlidingImagesContainer id="header-image">
+        <S.SlidingImage src={cartaz1} />
       </S.SlidingImagesContainer>
 
+      {/* Conteúdo sobreposto */}
       <S.Overlay>
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          style={{ justifyContent: "center", display: "flex" }}
+          transition={{ duration: 1, delay: 0.5 }}
+          style={{ display: "flex", justifyContent: "flex-end" }}
         >
           <S.HeaderContent>
-          <motion.h1
+            <motion.h1
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              style={{fontFamily: 'Inter'}}
             >
               8° Encontro de Perspectivas
             </motion.h1>
 
-            <motion.h2
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.5, delay: 1.2 }}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              style={{ marginBottom: "2rem" }}
             >
-              Experienciar a Cidadania numa <span>'Terra em Transe'</span>
-            </motion.h2>
+              Venha prestigiar o evento em três localidades:
+            </motion.p>
+
+            <motion.ul
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                listStyle: "none",
+                justifyContent: "start",
+                gap: "1rem",
+              }}
+            >
+              <li>📍 Local: Manaus-AM</li>
+              <li>📍 Local: Tefé-AM</li>
+              <li>📍 Local: Parintins-AM</li>
+            </motion.ul>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 1.5 }}
+              transition={{ duration: 1, delay: 1 }}
+              style={{ marginTop: "2rem" }}
             >
-              Junte-se a nós para debater os desafios da cidadania na sociedade contemporânea. 
-              </motion.p>
+              Ou se preferir, participe conosco!
+            </motion.p>
 
-              <motion.p
+            <S.MapButton
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 1.5 }}
+              transition={{ duration: 1, delay: 1 }}
+              style={{ marginTop: "2rem" }}
+              onClick={handleOpenModal}
             >
-              Um evento que reúne especialistas, acadêmicos e entusiastas para discutir perspectivas inovadoras.
-              </motion.p>
-            
+              Submeter trabalho <AiOutlineExport size={24} />
+            </S.MapButton>
           </S.HeaderContent>
         </motion.div>
       </S.Overlay>
+
+      {/* MODAL (renderiza somente se isModalOpen === true) */}
+      {isModalOpen && (
+        <S.ModalOverlay
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          //  onClick={handleCloseModal}
+        >
+          <S.ModalContent
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()} // Previne fechar ao clicar dentro
+          >
+            <S.ModalHeader>
+              <h2>Escolha o tipo de trabalho</h2>
+              <button onClick={handleCloseModal}>X</button>
+            </S.ModalHeader>
+
+            <S.ModalBody>
+              {/* Links estilizados como o botão principal */}{" "}
+              <S.ModalLink
+                href="https://docs.google.com/forms/d/e/1FAIpQLSelAlrrM7p4jHA8Ar7R6GtiGvWCwhvnHqgEyRhJUNu_XyfCzw/viewform?usp=header"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {" "}
+                Inscrição como COMUNICADOR <AiOutlineExport size={20} />{" "}
+              </S.ModalLink>
+              <S.ModalLink
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdqQzcldhesvr6zIC3AaAeXUdfrpPTX0zCQf8l92A1BhRn6gA/viewform?usp=header"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Inscrição como OUVINTE <AiOutlineExport size={20} />
+              </S.ModalLink>
+            </S.ModalBody>
+          </S.ModalContent>
+        </S.ModalOverlay>
+      )}
     </S.HeaderContainer>
   );
 };

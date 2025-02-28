@@ -1,92 +1,93 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Container,
   SectionTitle,
-  LocationList,
+  SlideContainer,
+  SlideContent,
+  PlaceImage,
   LocationCard,
   MapButton,
+  Controls,
+  PlaceTitle,
+  PlaceSubtitle,
+  PlaceContent,
+  PlaceHighligth,
+  PlaceStatus,
 } from "./styles";
-import { FiMapPin, FiExternalLink } from "react-icons/fi"; // Ícones do Feather
-import { FaUniversity, FaLandmark } from "react-icons/fa"; // Ícones do FontAwesome
+
+import { FiMapPin, FiExternalLink } from "react-icons/fi";
+import { IoChevronForward } from "react-icons/io5";
+import { locations } from "./places-data";
 
 export function Places() {
+  const [index, setIndex] = useState(0);
+
+  const nextSlide = () => setIndex((prev) => (prev + 1) % locations.length);
+
   return (
     <Container>
       <SectionTitle>
-        <FiMapPin /> Locais do Evento
+        <FiMapPin />
+        <span>Locais do Evento</span>
       </SectionTitle>
 
-      <LocationList>
-        {/* Manaus */}
-        <LocationCard>
-          <h3>
-            <FaUniversity /> <strong>Manaus</strong>
-          </h3>
-          <p>
-            <strong>📍 Local:</strong> Universidade X, Auditório A
-          </p>
-          <p>
-            <strong>Abertura oficial</strong> com <strong>mesas temáticas e
-            minicursos</strong>.
-          </p>
-          <p>
-            🎥 <em>Transmissão online disponível</em>.
-          </p>
-          <MapButton
-            href="https://www.google.com/maps?q=Universidade+X+Manaus"
-            target="_blank"
-            rel="noopener noreferrer"
+      <SlideContainer>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={locations[index].id}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.5 }}
           >
-            <FiMapPin /> Ver no mapa <FiExternalLink />
-          </MapButton>
-        </LocationCard>
+            {/* 
+              Envolvemos a imagem + card + control em um container (SlideContent)
+              para conseguirmos manipular melhor no mobile 
+            */}
+            <SlideContent>
+              <PlaceImage
+                src={locations[index].image}
+                alt={locations[index].city}
+              />
 
-        {/* Tefé */}
-        <LocationCard>
-          <h3>
-            <FaLandmark /> <strong>Tefé</strong>
-          </h3>
-          <p>
-            <strong>📍 Local:</strong> Centro de Convenções Y
-          </p>
-          <p>
-            Atividades <strong>acadêmicas e científicas</strong>,
-            <br />
-            <br />
-            Apresentação de <strong>trabalhos</strong> e <strong>debates interativos</strong>.
-          </p>
-          
-          <MapButton
-            href="https://www.google.com/maps?q=Centro+de+Convenções+Y+Tefé"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FiMapPin /> Ver no mapa <FiExternalLink />
-          </MapButton>
-        </LocationCard>
+              <LocationCard>
+                <PlaceContent>
+                  <PlaceTitle>
+                    {locations[index].icon}{" "}
+                    <strong>{locations[index].city}</strong>
+                  </PlaceTitle>
 
-        {/* Parintins */}
-        <LocationCard>
-          <h3>
-            <FaLandmark /> <strong>Parintins</strong>
-          </h3>
-          <p>
-            <strong>📍 Local:</strong> Instituto Cultural Z
-          </p>
-          <p>
-            <strong>Grupos de trabalho</strong> e <strong>apresentações culturais</strong>
-            <br />
-            <br />
-            no encerramento do evento.
-          </p>
-          <MapButton
-            href="https://www.google.com/maps?q=Instituto+Cultural+Z+Parintins"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FiMapPin /> Ver no mapa <FiExternalLink />
-          </MapButton>
-        </LocationCard>
-      </LocationList>
+                  <PlaceSubtitle>
+                    <strong>📍 Local:</strong> {locations[index].location}
+                  </PlaceSubtitle>
+
+                  <PlaceHighligth>
+                    {locations[index].description}
+                  </PlaceHighligth>
+
+                  {locations[index].stream && (
+                    <PlaceStatus>{locations[index].stream}</PlaceStatus>
+                  )}
+
+                  <MapButton
+                    href={locations[index].mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiMapPin /> Ver no mapa <FiExternalLink />
+                  </MapButton>
+                </PlaceContent>
+              </LocationCard>
+
+              <Controls onClick={nextSlide}>
+                {/* Mantemos o ícone grandão no desktop, ajustado no styled para mobile */}
+                <IoChevronForward size={89} />
+              </Controls>
+            </SlideContent>
+          </motion.div>
+        </AnimatePresence>
+      </SlideContainer>
     </Container>
   );
 }

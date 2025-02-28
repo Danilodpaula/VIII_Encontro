@@ -48,11 +48,11 @@ function Navbar() {
             Apresentação
           </a>
         </li>
-        <li>
+        {/* <li>
           <a href="#locais" onClick={(e) => handleNavClick(e, "locais")}>
             Locais
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="#submissao" onClick={(e) => handleNavClick(e, "submissao")}>
             Submissão

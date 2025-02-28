@@ -60,7 +60,8 @@ Esse conhecimento também se relaciona diretamente com o bioma amazônico, e est
 Portanto, trabalhar pelo conhecimento e preservação das línguas é trabalhar pela preservação do próprio ambiente. O GT incentiva fortemente a submissão de trabalhos linguísticos descritivos sobre as línguas faladas na Amazônia, especialmente no Amazonas, e suas interações com Etnolinguística, Linguística Histórica, Línguas em Contato, Tipologia Linguística, Sociolinguística e Linguística Aplicada.`,
   },
   {
-    title: "GT 5 – Em construção (Manaus)",
+    title:
+      "GT 5 - Matizes Amazônicas: reflexões interdisciplinares sobre Cultura, Memória, Patrimônio e Cidades",
     coordination:
       "Profa. Dra. Tatiana de Lima Pedrosa (PPGICH/UEA – SEC); Me. Samuel Luzeiro Lucena de Medeiros (Doutorando PPGH/UFAM); Ma. Lauriane Teixeira de Oliveira (Doutoranda PPGSA/UFRJ); Ma. Calina Ramos de Brito Souto (UFAM)",
     description: `O Grupo de Trabalho está voltado a reflexões que estudem, sob as perspectivas arqueológica, histórica, antropológica e interdisciplinar das Ciências Humanas, temas relativos à culturas, memórias, identidades e patrimônios das populações da Bacia Amazônica. 
@@ -81,5 +82,15 @@ Portanto, trabalhar pelo conhecimento e preservação das línguas é trabalhar 
   Serão bem-vindos trabalhos que discutam a presença humana no passado e presente na Amazônia, os vestígios e significações do ambiente, da paisagem, dos resquícios arqueológicos. 
   
   Também abordagens sobre fontes para a História da Amazônia que se apresentam sobre e/ou sob o solo, a floresta, as curvas dos rios, ao longo do território amazônico e que têm significado para os grupos passados, como suas ressignificações na atualidade.`,
+  },
+  {
+    title: "GT 7 - Diversidade cultural,  direitos humanos e inclusão",
+    coordination:
+      "Prof. Dr. Yomarley Holanda,  Profa. Dra. Monica Araújo e Prof. Dr. Tiago Santos (PPGICH/UEA)",
+    description: `A proposta do Grupo de Trabalho pretende articular pesquisas e discussões sobre diversidade cultural, direitos humanos e inclusão, enquanto fatores determinantes para a construção de uma sociedade democrática. 
+  
+  As discussões sobre os direitos humanos são fundamentais para a compreensão da construção da Amazônia, seja no campo da defesa da dignidade da pessoa humana, seja na proteção ambiental, do bem-estar e do ambiente ecologicamente equilibrado.
+  
+  No que diz respeito à inclusão, o GT abordará reflexões acerca do Desenvolvimento Inclusivo no contexto amazônico.`,
   },
 ];

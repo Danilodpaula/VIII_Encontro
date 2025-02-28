@@ -1,69 +1,109 @@
 import styled from "styled-components";
-import { colors } from "../../styles/color";
 
 export const Container = styled.div`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+`;
+
+export const WrapperAll = styled.div`
+  width: 90%;
+  max-width: 1200px;
   padding: 2rem;
-  color: ${colors.darkGray}; /* Cor principal do texto */
-  border-radius: 12px;
-  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
   margin: auto;
 `;
 
-export const SectionTitle = styled.h2`
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: ${colors.black};
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
-`;
-
-export const Highlight = styled.div`
-  background: ${colors.secondary};
-  padding: 1.2rem;
-  border-radius: 10px;
-  color: ${colors.white};
-  text-align: center;
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-`;
-
-export const TextBlock = styled.div`
+export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  line-height: 1.6;
-  background-color: ${colors.lightGray}; /* Fundo leve para destaque */
-  padding: 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  gap: 8px;
+`;
 
-  h3 {
-    font-size: clamp(1.3rem, 3vw, 1.6rem);
-    color: ${colors.primary};
-    margin-bottom: 0.5rem;
-  }
+export const TitleContent = styled.div`
+  color: #053619;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+`;
 
-  p {
-    color: ${colors.darkGray};
+export const SubTitleText = styled.div`
+  color: #60625f;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+`;
+
+export const PresentationContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+
+  @media (max-width: 1234px) {
+    flex-direction: column;
+    text-align: center;
   }
 `;
 
-export const BulletList = styled.ul`
-  padding-left: 1.5rem; /* Adiciona espaço à esquerda */
-  margin-left: 0; /* Garante que a lista não esteja deslocada demais */
-  list-style-position: inside; /* Mantém os bullets dentro do padding */
+export const PresentationText = styled.div`
+  color: #444;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+  flex-basis: 50%;
 
-  li {
-    margin-bottom: 0.5rem;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    color: ${colors.secondary}; /* Verde médio */
-    font-weight: bold;
-    display: flex;
-    align-items: center; /* Alinha ícones e texto */
-    gap: 0.5rem; /* Espaço entre o ícone e o texto */
+  p {
+    margin-bottom: 16px;
   }
+
+  strong {
+    font-weight: 600;
+  }
+
+  @media (max-width: 1234px) {
+    max-width: 100%;
+  }
+`;
+
+export const PresentationImg = styled.img`
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-basis: 50%;
+
+  @media (max-width: 1024px) {
+    max-width: 54vw;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 80vw;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90vw;
+  }
+`;
+
+export const ImagesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `;

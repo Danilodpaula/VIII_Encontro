@@ -1,26 +1,26 @@
-import ContactSection from "../../modules/Contacts";
+// import ContactSection from "../../modules/Contacts";
 import Exhibition from "../../modules/Exhibition";
 import Gallery from "../../modules/Gallery";
-import { Places } from "../../modules/Places";
-import { Presentation } from "../../modules/Presentation"
+// import { Places } from "../../modules/Places";
+// import { Presentation } from "../../modules/Presentation"
 import { Schedule } from "../../modules/Schedule";
 import Workgroups from "../../modules/WorkGroup";
 
 // **Dados das seções (poderia vir de um backend futuramente)**
 export const sectionsData = [
-    {
-      id: "apresentacao",
-      title: "",
-      content:
-        "",
-      component: Presentation
-    },
-    {
-      id: "locais",
-      title: "",
-      content: "",
-      component: Places
-    },
+    // {
+    //   id: "apresentacao",
+    //   title: "",
+    //   content:
+    //     "",
+    //   component: Presentation
+    // },
+    // {
+    //   id: "locais",
+    //   title: "",
+    //   content: "",
+    //   component: Places
+    // },
     {
       id: "submissao",
       title: "Chamada para Submissão",
@@ -40,13 +40,13 @@ export const sectionsData = [
     {
       id: "programação",
       title: "Programação",
-      content: "Confira a programação do evento.",
+      content: "Em construção.",
       component: Schedule
     },
     {
       id: "galeria",
       title: "Galeria",
-      content: "Fotos e vídeos das edições anteriores.",
+      content: "Em construção.",
       component: Gallery
     },
     {
@@ -55,11 +55,11 @@ export const sectionsData = [
       content: "Aprofunde-se nas discussões e perspectivas centrais deste evento.",
       component: Exhibition
     },
-    {
-      id: "contatos",
-      title: "Contatos",
-      content: "Confira nossa redes.",
-      component: ContactSection
-    },
+    // {
+    //   id: "contatos",
+    //   title: "Contatos",
+    //   content: "Confira nossa redes.",
+    //   component: ContactSection
+    // },
   ];
   
