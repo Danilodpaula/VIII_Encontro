@@ -1,155 +1,160 @@
 import styled from "styled-components";
 import { colors } from "../../styles/color";
 
+// Footer principal
 export const FooterContainer = styled.footer`
   display: flex;
   justify-content: center;
-  gap: 10px;
   text-align: center;
   align-items: center;
-
   background-color: ${colors.primary};
   color: ${colors.white};
   position: static;
   width: 100%;
   bottom: 0;
-  z-index: 1000; /* Mantém acima de outros elementos */
-
-  /* Evita sobreposição do conteúdo */
-  height: 60px; /* Define uma altura fixa */
+  z-index: 1000;
+  height: 60px;
 `;
 
+// Container interno do footer (organiza ícones e texto)
 export const ContentWrapper = styled.div`
-display: flex;
-flex-direction: row;
-width: 90%;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
 `;
 
+// Ícone que abre o modal no mobile.
+// Em telas grandes, ficará hidden.
+export const MobileIcon = styled.div`
+  display: none; /* Oculto por padrão */
 
-export const IconsWrapper = styled.div`
-display: flex;
-gap: 12px;
-width: fit-content;
-;
-`;
+  svg {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: ${colors.white};
+    transition: transform 0.2s;
+  }
 
-/* Descrição */
-export const Description = styled.p`
-  text-align: center;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: ${colors.darkGray}; /* Texto principal */
-  margin-bottom: 2rem;
-`;
+  &:hover svg {
+    transform: scale(1.1);
+  }
 
-/* Item da lista */
-// export const ContactItem = styled.div`
-//   display: flex;
-//   align-items: center;
-//   /* background: ${colors.lightGray}; */
-
-//   border-radius: 4px;
-//   cursor: pointer;
-//   transition: background 0.3s ease-in-out, transform 0.2s;
-
-//   svg {
-//     color: white;
-//   }
-
-//   &:hover {
-//     svg {
-//       color: ${colors.accent}; /* Verde claro para destaque */
-//     }
-//     transform: translateY(-4px);
-//   }
-
-//   @media (max-width: 600px) {
-//     flex-direction: column;
-//     align-items: center;
-//     text-align: center;
-//   }
-// `;
-
-/* Ícones */
-// export const Icon = styled.div`
-//   font-size: 1.8rem;
-//   color: ${colors.primary}; /* Verde escuro */
-//   margin-right: 1rem;
-
-//   @media (max-width: 600px) {
-//     margin-bottom: 0.5rem;
-//     margin-right: 0;
-//   }
-// `;
-
-/* Informações de Contato */
-export const ContactInfo = styled.div`
-  font-size: 1rem;
-  color: ${colors.darkGray}; /* Texto principal */
-
-  a {
-    text-decoration: none;
-    color: ${colors.secondary}; /* Verde médio */
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: ${colors.primary}; /* Verde escuro ao passar o mouse */
-    }
+  @media (max-width: 768px) {
+    /* Mostra no mobile */
+    display: flex;
   }
 `;
 
+// Envolve os ícones individuais (ex: Facebook, Instagram etc.)
+// Por padrão, aparece em desktop. Some no mobile.
+export const IconsWrapper = styled.div`
+  display: flex;
+  gap: 12px;
 
-/** Container principal que envolve o ícone e o dropdown */
-export const MultiLinkContainer = styled.div`
-  position: relative; /* Importante para o dropdown ficar posicionado corretamente */
+  @media (max-width: 768px) {
+    /* Some em telas menores */
+    display: none;
+  }
 `;
 
-/** Mantemos o ContactItem já existente ou adaptamos */
+// Item que representa cada ícone (Facebook, Insta...)
 export const ContactItem = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
   transition: background 0.3s ease-in-out, transform 0.2s;
 
-  svg {
-    color: ${colors.white};
-  }
-
   &:hover {
-    svg {
-      color: ${colors.accent};
-    }
     transform: translateY(-4px);
   }
+
+  svg {
+    color: ${colors.white};
+    font-size: 1.8rem;
+  }
+
+  span {
+    margin-left: 8px;
+    color: ${colors.primary};
+    font-weight: bold;
+  }
 `;
 
-/** Ícone do react-icons */
+// Container do ícone
 export const Icon = styled.div`
   font-size: 1.8rem;
-  margin-right: 1rem;
 `;
 
-/** Menu dropdown que será exibido quando "isOpen = true" */
-export const DropdownMenu = styled.ul`
-  position: absolute;
-  top: 40px; /* Ajuste conforme sua necessidade */
-  left: 0;
+/* ========================= MODAL ========================= */
+
+// Overlay que cobre todo o viewport (independente do scroll)
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;       /* Cola no topo */
+  left: 0;      /* e no canto esquerdo */
+  right: 0;     /* cobre a tela toda na horizontal */
+  bottom: 0;    /* e até o rodapé */
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparente */
+  z-index: 62000; /* acima do footer */
+  
+  display: flex;
+  align-items: flex-end;  /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+`;
+
+// Conteúdo do modal em si
+export const ModalContent = styled.div`
   background-color: ${colors.white};
-  list-style-type: none;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px; /* limite de largura */
+  margin-bottom: 20rem;
+  text-align: center;
 
-  li {
-    padding: 0.5rem 0;
+  /* Caso queira limitar a altura e permitir rolagem interna: */
+  /* max-height: 80vh;
+     overflow-y: auto; */
+
+  h2 {
+    margin-bottom: 1rem;
     color: ${colors.primary};
-    cursor: pointer;
+  }
+`;
 
-    &:hover {
+// Container interno que agrupa os ícones no modal
+export const ModalIconsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  ${ContactItem} {
+    justify-content: center;
+
+    svg {
+      color: ${colors.primary};
+    }
+
+    &:hover svg {
       color: ${colors.secondary};
     }
+  }
+`;
+
+// Botão de fechar
+export const CloseButton = styled.button`
+  background-color: ${colors.primary};
+  color: ${colors.white};
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: ${colors.secondary};
   }
 `;

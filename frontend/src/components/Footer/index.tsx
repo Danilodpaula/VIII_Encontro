@@ -1,97 +1,113 @@
-// import { FiFacebook, FiInstagram, FiMail, FiYoutube } from "react-icons/fi";
-// import * as S from "./styles";
-
-// const handleRedirect = (
-//   event: React.MouseEvent<HTMLLIElement>,
-//   url: string
-// ) => {
-//   event.stopPropagation();
-//   window.open(url, "_blank", "noopener,noreferrer");
-// };
-
-// function Footer() {
-//   return (
-//     <S.FooterContainer>
-//       <S.ContentWrapper>
-//         <S.IconsWrapper>
-//           <S.ContactItem
-//             onClick={(e) =>
-//               handleRedirect(e, "mailto:encontrodeperspectivas@gmail.com")
-//             }
-//           >
-//             <S.Icon>
-//               <FiMail />
-//             </S.Icon>
-//           </S.ContactItem>
-
-//           <S.ContactItem
-//             onClick={(e) =>
-//               handleRedirect(e, "https://www.facebook.com/evento")
-//             }
-//           >
-//             <S.Icon>
-//               <FiFacebook />
-//             </S.Icon>
-//           </S.ContactItem>
-
-//           <S.ContactItem
-//             onClick={(e) =>
-//               handleRedirect(
-//                 e,
-//                 "https://www.instagram.com/ppgichuea?igsh=NzIyeHJyMTd1Z2ph"
-//               )
-//             }
-//           >
-//             <S.Icon>
-//               <FiInstagram />
-//             </S.Icon>
-//           </S.ContactItem>
-
-//           <S.ContactItem
-//             onClick={(e) =>
-//               handleRedirect(e, "https://www.youtube.com/@tvppgichuea")
-//             }
-//           >
-//             <S.Icon>
-//               <FiYoutube />
-//             </S.Icon>
-//           </S.ContactItem>
-//         </S.IconsWrapper>
-
-//         <p>
-//           © 2025 VIII Encontro de Perspectivas. Todos os direitos reservados.
-//         </p>
-//       </S.ContentWrapper>
-//     </S.FooterContainer>
-//   );
-// }
-
-// export default Footer;
-
-
-import { FiMail } from "react-icons/fi";
-import MultiLinkIcon from "./MultiLinkIcon"; // caminho correto do seu componente
+import  { useState } from "react";
+import { FiMail, FiMenu, FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import * as S from "./styles";
 
 export function Footer() {
+  // Estado para controlar abertura/fechamento do modal no mobile
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Abre ou fecha o modal
+  const handleModalToggle = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
+  // Redireciona para links externos
+  const handleRedirect = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <S.FooterContainer>
       <S.ContentWrapper>
-        <S.IconsWrapper>
-          {/* Exemplo: Ícone com múltiplos endereços de e-mail */}
-          <MultiLinkIcon
-            icon={FiMail}
-            links={[
-              { label: "Email 1", url: "mailto:exemplo1@gmail.com" },
-              { label: "Email 2", url: "mailto:exemplo2@gmail.com" },
-            ]}
-          />
+        {/* 
+          Ícone de menu que só aparece no mobile (ver em styles).
+          Ao clicar, abre/fecha o modal.
+        */}
+        <S.MobileIcon onClick={handleModalToggle}>
+          <FiMenu />
+        </S.MobileIcon>
 
-          {/* Outros ícones... */}
+        {/* 
+          Seção de ícones normal (exibida apenas em telas maiores).
+          Estes ícones ficam escondidos no mobile. 
+        */}
+        <S.IconsWrapper>
+          <S.ContactItem onClick={() => handleRedirect("mailto:encontrodeperspectivas@gmail.com")}>
+            <S.Icon>
+              <FiMail />
+            </S.Icon>
+          </S.ContactItem>
+
+          <S.ContactItem onClick={() => handleRedirect("https://www.facebook.com/evento")}>
+            <S.Icon>
+              <FiFacebook />
+            </S.Icon>
+          </S.ContactItem>
+
+          <S.ContactItem
+            onClick={() =>
+              handleRedirect("https://www.instagram.com/ppgichuea?igsh=NzIyeHJyMTd1Z2ph")
+            }
+          >
+            <S.Icon>
+              <FiInstagram />
+            </S.Icon>
+          </S.ContactItem>
+
+          <S.ContactItem onClick={() => handleRedirect("https://www.youtube.com/@tvppgichuea")}>
+            <S.Icon>
+              <FiYoutube />
+            </S.Icon>
+          </S.ContactItem>
         </S.IconsWrapper>
 
         <p>© 2025 VIII Encontro de Perspectivas. Todos os direitos reservados.</p>
       </S.ContentWrapper>
+
+      {/* Modal (será visível apenas quando isModalOpen = true) */}
+      {isModalOpen && (
+        <S.ModalOverlay onClick={handleModalToggle}>
+          <S.ModalContent onClick={(e) => e.stopPropagation()}>
+            <h2>Conecte-se</h2>
+            <S.ModalIconsWrapper>
+              {/* Reutilizamos os ícones aqui dentro do modal */}
+              <S.ContactItem onClick={() => handleRedirect("mailto:encontrodeperspectivas@gmail.com")}>
+                <S.Icon>
+                  <FiMail />
+                </S.Icon>
+                <span>E-mail</span>
+              </S.ContactItem>
+
+              <S.ContactItem onClick={() => handleRedirect("https://www.facebook.com/evento")}>
+                <S.Icon>
+                  <FiFacebook />
+                </S.Icon>
+                <span>Facebook</span>
+              </S.ContactItem>
+
+              <S.ContactItem
+                onClick={() =>
+                  handleRedirect("https://www.instagram.com/ppgichuea?igsh=NzIyeHJyMTd1Z2ph")
+                }
+              >
+                <S.Icon>
+                  <FiInstagram />
+                </S.Icon>
+                <span>Instagram</span>
+              </S.ContactItem>
+
+              <S.ContactItem onClick={() => handleRedirect("https://www.youtube.com/@tvppgichuea")}>
+                <S.Icon>
+                  <FiYoutube />
+                </S.Icon>
+                <span>YouTube</span>
+              </S.ContactItem>
+            </S.ModalIconsWrapper>
+
+            <S.CloseButton onClick={handleModalToggle}>Fechar</S.CloseButton>
+          </S.ModalContent>
+        </S.ModalOverlay>
+      )}
     </S.FooterContainer>
   );
 }
