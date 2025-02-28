@@ -53,17 +53,17 @@ function Navbar() {
             Locais
           </a>
         </li> */}
-        <li>
+        {/* <li>
           <a href="#submissao" onClick={(e) => handleNavClick(e, "submissao")}>
             Submissão
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="#gts" onClick={(e) => handleNavClick(e, "gts")}>
             Grupos de Trabalho
           </a>
         </li>
-        <li>
+        {/* <li>
           <a href="#galeria" onClick={(e) => handleNavClick(e, "galeria")}>
             Galeria
           </a>
@@ -72,7 +72,7 @@ function Navbar() {
           <a href="#exposicao" onClick={(e) => handleNavClick(e, "exposicao")}>
             Exposição
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="#contatos" onClick={(e) => handleNavClick(e, "contatos")}>
             Contatos

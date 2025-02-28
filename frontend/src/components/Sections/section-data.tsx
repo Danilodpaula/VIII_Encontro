@@ -21,16 +21,16 @@ export const sectionsData = [
     //   content: "",
     //   component: Places
     // },
-    {
-      id: "submissao",
-      title: "Chamada para Submissão",
-      content: "Submeta seu trabalho para os Grupos de Trabalho. Prazo final: XX/XX/2025.",
-      component: () => (
-        <div>
-          <p>Os interessados devem enviar seus resumos até o prazo estipulado. Os melhores trabalhos serão apresentados nos GTs.</p>
-        </div>
-      ),
-    },
+    // {
+    //   id: "submissao",
+    //   title: "Chamada para Submissão",
+    //   content: "Submeta seu trabalho para os Grupos de Trabalho. Prazo final: XX/XX/2025.",
+    //   component: () => (
+    //     <div>
+    //       <p>Os interessados devem enviar seus resumos até o prazo estipulado. Os melhores trabalhos serão apresentados nos GTs.</p>
+    //     </div>
+    //   ),
+    // },
     {
       id: "gts",
       title: "Grupos de Trabalho",

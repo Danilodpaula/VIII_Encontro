@@ -10,7 +10,8 @@ import {
   WrapperAll,
 } from "./styles";
 
-import presentation from "../../assets/presentationimg.png";
+import presentation1 from "../../assets/presentationimg.png";
+import presentation from "../../assets/2.jpeg";
 
 export function Presentation() {
   return (
@@ -84,7 +85,7 @@ export function Presentation() {
 
           <ImagesWrapper>
             <PresentationImg src={presentation} />
-            <PresentationImg src={presentation} />
+            <PresentationImg src={presentation1} />
           </ImagesWrapper>
         </PresentationContent>
       </WrapperAll>
