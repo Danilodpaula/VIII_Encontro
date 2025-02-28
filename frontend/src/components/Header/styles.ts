@@ -2,7 +2,7 @@
    styles.ts
    ======================= */
    import styled from "styled-components";
-   import cartazMobile from "../../assets/novo (1)_page-0001.jpg";
+   import cartazMobile from "../../assets/cartaz_viii_encontro.jpg";
    import { colors } from "../../styles/color";
    import { motion } from "framer-motion";
    
