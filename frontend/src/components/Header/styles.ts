@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import cartazMobile from "../../assets/cartaz_evento.jpeg";
+import dryRiver from "../../assets/dry_river.png"
 import { colors } from "../../styles/color";
 import { motion } from "framer-motion";
 
@@ -155,7 +156,7 @@ export const MapButton = styled(motion.a)`
 // Conteúdo do header (bloco branco)
 export const MobileHeaderContent = styled.div`
   position: relative; /* Necessário para que o ::before funcione */
-  background-image: url('../../../src/assets/dry_river.png');
+  background-image: url(${dryRiver});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
