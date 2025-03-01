@@ -107,3 +107,40 @@ export const ImagesWrapper = styled.div`
   flex-direction: column;
   gap: 2rem;
 `;
+
+export const DividerImage1 = styled.img`
+  position: absolute;
+  transform: rotate(360deg); /* Gira a imagem */
+  z-index: 9999;
+
+  width: 200px;
+  height: 200px;
+
+  /* Posiciona no canto esquerdo */
+  left: 0;
+
+  transform: translate(0%, -10%); /* Mantém na esquerda e centraliza verticalmente */
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
+`;
+
+export const DividerImage2 = styled.img`
+  position: absolute;
+  transform: rotate(180deg); /* Gira a imagem */
+  z-index: 9999;
+
+  width: 200px;
+  height: 200px;
+
+  /* Posiciona no canto esquerdo */
+  right: 0;
+
+  transform: translate(12%, 260%) rotate(180deg); /* Mantém na esquerda e centraliza verticalmente */
+
+  @media (max-width: 768px) {
+   display: none;
+  }
+`;

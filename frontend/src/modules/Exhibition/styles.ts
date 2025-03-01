@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/color";
+import graxura_media from "../../assets/engrave_large_1.svg"
 
 // Breakpoint para mobile
 const MOBILE_BREAK = "927px";
@@ -206,4 +207,24 @@ export const Conclusion = styled.p`
   text-align: center;
   padding: 1rem;
   border-top: 2px solid ${colors.secondary};
+`;
+
+// Imagem de divisão
+export const DividerImage = styled.img`
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(1.2);
+  flex-shrink: 0;
+  /* opacity: 0.6; */
+  content: url(${graxura_media});
+  object-fit: cover;
+  width: 100vw;
+
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 `;

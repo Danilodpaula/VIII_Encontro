@@ -65,6 +65,8 @@ const Exhibition: React.FC = () => {
         ))}
       </S.Container>
 
+      <S.DividerImage />
+
       {/* <S.Conclusion>{EXHIBITION_CONTENT.conclusion}</S.Conclusion> */}
     </S.WrapperAll>
   );
