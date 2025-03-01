@@ -10,7 +10,7 @@ import ChamadaPDF from "../../assets/1ª CIRCULAR 2025 VIII Encontro Perspetivas
 
 export default function ChamadaSubmissao() {
   return (
-    <ChamadaContainer>
+    <ChamadaContainer id="chamada">
       <Title>
         Chamada de Submissão de Resumos para Comunicações
       </Title>

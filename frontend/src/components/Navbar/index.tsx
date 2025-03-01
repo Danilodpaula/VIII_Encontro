@@ -43,6 +43,11 @@ function Navbar() {
       </S.MenuButton>
 
       <S.NavList isOpen={menuOpen} isOverImage={isOverImage}>
+      <li>
+          <a href="#apresentacao" onClick={(e) => handleNavClick(e, "inicio")}>
+            Início
+          </a>
+        </li>
         <li>
           <a href="#apresentacao" onClick={(e) => handleNavClick(e, "apresentacao")}>
             Apresentação
@@ -68,14 +73,15 @@ function Navbar() {
             Galeria
           </a>
         </li>
+      */}
         <li>
           <a href="#exposicao" onClick={(e) => handleNavClick(e, "exposicao")}>
             Exposição
           </a>
-        </li> */}
+        </li> 
         <li>
-          <a href="#contatos" onClick={(e) => handleNavClick(e, "contatos")}>
-            Contatos
+          <a href="#contatos" onClick={(e) => handleNavClick(e, "chamada")}>
+            Chamada
           </a>
         </li>
       </S.NavList>

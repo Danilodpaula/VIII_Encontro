@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 // import OrganizersCarrousel from "../../components/OrganizersCarrousel";
 import Sections from "../../components/Sections";
 import ChamadaSubmissao from "../../modules/CallForSubmit";
+import Exhibition from "../../modules/Exhibition";
 import Partners from "../../modules/Partners";
 // import { Places } from "../../modules/Places";
 import { Presentation } from "../../modules/Presentation";
@@ -17,8 +18,9 @@ function HomePage() {
         <Header />
         <Presentation />
         {/* <Places /> */}
-        <Sections />
         {/* <OrganizersCarrousel /> */}
+        <Exhibition />
+        <Sections />
         <ChamadaSubmissao />
         <Partners />
         <Footer />

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
-  margin: 20px;
+  /* margin: 20px; */
   border-radius: 5px;
   width: 90%;
-  min-height: 90vh;
+  /* min-height: 90vh; */
 `;
 
 /* Seção individual com efeito de vidro */

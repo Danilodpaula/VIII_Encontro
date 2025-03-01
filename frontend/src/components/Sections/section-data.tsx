@@ -1,5 +1,5 @@
 // import ContactSection from "../../modules/Contacts";
-import Exhibition from "../../modules/Exhibition";
+// import Exhibition from "../../modules/Exhibition";
 import Gallery from "../../modules/Gallery";
 // import { Places } from "../../modules/Places";
 // import { Presentation } from "../../modules/Presentation"
@@ -49,12 +49,12 @@ export const sectionsData = [
       content: "Em construção.",
       component: Gallery
     },
-    {
-      id: "exposicao",
-      title: "Exposição",
-      content: "Aprofunde-se nas discussões e perspectivas centrais deste evento.",
-      component: Exhibition
-    },
+    // {
+    //   id: "exposicao",
+    //   title: "Exposição",
+    //   content: "Aprofunde-se nas discussões e perspectivas centrais deste evento.",
+    //   component: Exhibition
+    // },
     // {
     //   id: "contatos",
     //   title: "Contatos",

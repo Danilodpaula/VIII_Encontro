@@ -1,20 +1,10 @@
 export const EXHIBITION_CONTENT = {
-  title: "Cidadania em Transe: Reflexões sobre a Crise Climática",
+  title: "Cidadania em Transe: Reflexões Climáticas em Cinco Atos",
   introduction: `
-      Os eventos climáticos extremos se intensificam em todo o Brasil, afetando diretamente comunidades e provocando reflexões 
-      sobre os impactos ambientais e sociais. Esta exposição apresenta cinco regiões do país e os desafios que enfrentam devido 
-      às mudanças climáticas.`,
+     A instalação “Experienciar a Cidadania numa Terra em Transe” fará parte do VIII Encontro de Perspectivas, oferecendo uma experiência imersiva e multimodal. 
+     Seu objetivo é sensibilizar o público sobre os impactos das mudanças climáticas no Brasil, evidenciando suas múltiplas dimensões e a urgência de soluções coletivas para a construção de uma cidadania sustentável.`,
 
   sections: [
-    {
-      region: "Sul",
-      heading: "A Tragédia das Enchentes",
-      content: `
-          As chuvas torrenciais no Sul têm provocado enchentes devastadoras, desalojando milhares de famílias. O acúmulo de precipitação extrema, 
-          agravado pelo desmatamento e pela urbanização desenfreada, tem transformado paisagens inteiras em verdadeiras zonas de calamidade.`,
-      image:
-        "https://static.poder360.com.br/2024/05/cavalo-globonews-8mai2024-848x477.png",
-    },
     {
       region: "Norte",
       heading: "A Amazônia em Chamas",
@@ -22,6 +12,14 @@ export const EXHIBITION_CONTENT = {
           O avanço do fogo sobre a floresta amazônica tem gerado uma nuvem de fumaça sufocante que cobre Manaus e outras cidades. 
           As queimadas, muitas vezes criminosas, impactam diretamente a biodiversidade e intensificam a crise climática global.`,
       image: "https://jcam.com.br/wp-content/uploads/2023/11/follow-fumaca.jpg",
+    },
+    {
+      region: "Nordeste",
+      heading: "Chuvas Extremas e Alagamentos",
+      content: `
+          O Nordeste enfrenta chuvas torrenciais que resultam em enxurradas e enchentes inesperadas. A infraestrutura das cidades é insuficiente 
+          para lidar com o volume de água, causando deslizamentos de terra e perdas humanas e materiais.`,
+      image: "https://c.files.bbci.co.uk/3E73/production/_124978951_recife.jpg",
     },
     {
       region: "Centro-Oeste",
@@ -42,12 +40,13 @@ export const EXHIBITION_CONTENT = {
         "https://imagens.ebc.com.br/7dStPKEvRKfA9VV5wE5Gx3iuhd0=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/_dsc4446.jpg?itok=GVWfrsUW",
     },
     {
-      region: "Nordeste",
-      heading: "Chuvas Extremas e Alagamentos",
+      region: "Sul",
+      heading: "A Tragédia das Enchentes",
       content: `
-          O Nordeste enfrenta chuvas torrenciais que resultam em enxurradas e enchentes inesperadas. A infraestrutura das cidades é insuficiente 
-          para lidar com o volume de água, causando deslizamentos de terra e perdas humanas e materiais.`,
-      image: "https://c.files.bbci.co.uk/3E73/production/_124978951_recife.jpg",
+          As chuvas torrenciais no Sul têm provocado enchentes devastadoras, desalojando milhares de famílias. O acúmulo de precipitação extrema, 
+          agravado pelo desmatamento e pela urbanização desenfreada, tem transformado paisagens inteiras em verdadeiras zonas de calamidade.`,
+      image:
+        "https://static.poder360.com.br/2024/05/cavalo-globonews-8mai2024-848x477.png",
     },
   ],
 

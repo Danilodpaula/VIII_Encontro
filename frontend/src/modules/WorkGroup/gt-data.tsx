@@ -61,7 +61,7 @@ Portanto, trabalhar pelo conhecimento e preservação das línguas é trabalhar 
   },
   {
     title:
-      "GT 5 - Matizes Amazônicas: reflexões interdisciplinares sobre Cultura, Memória, Patrimônio e Cidades",
+      "GT 5 - Matizes Amazônicas: reflexões interdisciplinares sobre Cultura, Memória, Patrimônio e Cidades (Manaus)",
     coordination:
       "Profa. Dra. Tatiana de Lima Pedrosa (PPGICH/UEA – SEC); Me. Samuel Luzeiro Lucena de Medeiros (Doutorando PPGH/UFAM); Ma. Lauriane Teixeira de Oliveira (Doutoranda PPGSA/UFRJ); Ma. Calina Ramos de Brito Souto (UFAM)",
     description: `O Grupo de Trabalho está voltado a reflexões que estudem, sob as perspectivas arqueológica, histórica, antropológica e interdisciplinar das Ciências Humanas, temas relativos à culturas, memórias, identidades e patrimônios das populações da Bacia Amazônica. 
@@ -84,7 +84,7 @@ Portanto, trabalhar pelo conhecimento e preservação das línguas é trabalhar 
   Também abordagens sobre fontes para a História da Amazônia que se apresentam sobre e/ou sob o solo, a floresta, as curvas dos rios, ao longo do território amazônico e que têm significado para os grupos passados, como suas ressignificações na atualidade.`,
   },
   {
-    title: "GT 7 - Diversidade cultural,  direitos humanos e inclusão",
+    title: "GT 7 - Diversidade cultural,  direitos humanos e inclusão (Tefé)",
     coordination:
       "Prof. Dr. Yomarley Holanda,  Profa. Dra. Monica Araújo e Prof. Dr. Tiago Santos (PPGICH/UEA)",
     description: `A proposta do Grupo de Trabalho pretende articular pesquisas e discussões sobre diversidade cultural, direitos humanos e inclusão, enquanto fatores determinantes para a construção de uma sociedade democrática. 

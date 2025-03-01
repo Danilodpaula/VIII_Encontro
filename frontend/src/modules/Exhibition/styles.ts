@@ -1,159 +1,209 @@
 import styled from "styled-components";
 import { colors } from "../../styles/color";
 
-/* Container principal */
-export const Container = styled.section`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas de tamanho igual */
-  grid-template-rows: repeat(2, auto); /* Cria 2 linhas ajustáveis */
-  gap: 2rem; /* Espaço entre os itens */
-  justify-content: center;
-  align-items: stretch;
+// Breakpoint para mobile
+const MOBILE_BREAK = "927px";
 
-  margin: 4rem auto;
-  padding: 2rem;
-  text-align: justify;
-  background: ${colors.white};
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+export const WrapperAll = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: 1fr; /* Em telas menores, fica 1 coluna */
-    grid-template-rows: auto;
-    max-width: 90%;
-    padding: 1.5rem;
+  @media (min-width: ${MOBILE_BREAK}) {
+    margin-top: 5rem;
   }
 `;
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 68%;
 
-/* Título da Exposição */
+  @media (max-width: ${MOBILE_BREAK}) {
+    max-width: 90%;
+  }
+`;
+
+export const TitleHeader = styled.span`
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: white;
+  margin-bottom: -1.5rem;
+`;
+
 export const Title = styled.h1`
   text-align: center;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: bold;
-  color: ${colors.primary};
+  color: white;
+  max-width: 95%;
+  justify-self: center;
+  align-self: center;
   margin-bottom: 1.5rem;
 `;
 
-/* Introdução */
 export const Introduction = styled.p`
   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: ${colors.darkGray};
+  color: white;
   margin-bottom: 2rem;
   line-height: 1.6;
+  text-align: center;
 `;
 
-interface ImageContainerProps {
+/** Container das Seções */
+export const Container = styled.section`
+  width: 90%;
+  display: flex; /* Acordeão horizontal no desktop */
+  gap: 1rem;
+  overflow: hidden; /* Evita scroll horizontal */
+
+  @media (max-width: ${MOBILE_BREAK}) {
+    display: block; /* Empilhado no mobile */
+    overflow: visible;
+  }
+`;
+
+/** Cada Seção (imagem de fundo + efeito de “acordeão”) */
+interface ISectionProps {
   bgImage: string;
+  isHovered: boolean;
 }
-
-/* Seção de cada região */
-export const Section = styled.div<ImageContainerProps>`
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  gap: clamp(1rem, 2vw, 2rem);
-  margin-bottom: 3rem;
-  background: ${colors.lightGray};
-  padding: clamp(1rem, 2vw, 1.5rem);
-  border-radius: 4px;
-
+export const Section = styled.div<ISectionProps>`
+  position: relative;
   background-image: url(${(props) => props.bgImage});
   background-position: center;
   background-size: cover;
-  min-height: 300px;
-  transition: min-height 0.7s ease-in-out;
+  height: 400px;
 
-  &:hover {
-    min-height: 450px;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-`;
-
-/* Container de Imagem */
-export const ImageContainer = styled.div`
-  flex: 1;
-  max-width: clamp(250px, 30vw, 300px);
-  height: clamp(180px, 25vw, 200px);
-  overflow: hidden;
-  border-radius: 4px;
-`;
-
-/* Imagem */
-export const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-`;
-
-/* Texto da Seção */
-export const TextContent = styled.div`
-  justify-content: flex-end;
-  width: clamp(50%, 60%, 70%);
-  background: rgba(255, 255, 255, 0.7);
-  height: fit-content;
-  backdrop-filter: blur(5px);
-  padding: clamp(1rem, 1.5vw, 1.5rem);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  color: #333;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.7s ease-in-out, visibility 0s linear;
 
-  ${Section}:hover & {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
-  }
+  /* Acordeão horizontal no desktop */
+  flex: ${(props) => (props.isHovered ? 4 : 1)};
+  transition: flex 0.6s ease;
 
-  ${Section}:not(:hover) & {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s linear, opacity 0.5s ease-in-out 0.1s;
-  }
-
-  @media (max-width: 768px) {
-    width: 90%;
+  /* No mobile, sem acordeão horizontal */
+  @media (max-width: ${MOBILE_BREAK}) {
+    width: 100%;
+    margin-bottom: 3rem;
+    flex: none;
+    height: 300px;
   }
 `;
 
-/* Nome da Região */
+/**
+ * Contêiner do texto (Região, Título, Ícone + Conteúdo)
+ * - No desktop, “fecha” com max-height menor (mas o cabeçalho ainda visível).
+ * - No mobile, abre com o ícone (toggle).
+ */
+interface ITextContentProps {
+  isOpenMobile: boolean; // mobile toggle
+  isHovered: boolean; // desktop hover
+}
+
+export const TextContent = styled.div<ITextContentProps>`
+  /* Fundo semitransparente */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+
+  width: 100%;
+  color: #333;
+
+  /* Sombra suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  /* Para a animação de "abrir/fechar" via max-height */
+  overflow: hidden;
+  transition: max-height 0.6s ease; /* Suavidade */
+
+  /* 
+   * Queremos que mesmo "fechado", 
+   * região + título apareçam. Precisamos de 
+   * no mínimo a altura do HeaderRow.
+   * Ajuste esse valor se o header for maior. 
+   */
+  /* Fechado: exibe só ~4.5rem (header). Aberto: 9999px */
+  @media (max-width: ${MOBILE_BREAK}) {
+    max-height: ${({ isOpenMobile }) => (isOpenMobile ? "2000px" : "5rem")};
+  }
+
+  /* No desktop, fechada ou aberta dependendo do hover */
+  @media (min-width: ${MOBILE_BREAK}) {
+    max-height: ${({ isHovered }) => (isHovered ? "1500px" : "6rem")};
+  }
+`;
+
+/** Cabeçalho (Região + Título + Ícone) */
+export const HeaderRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Padding para o topo/lados. 
+     Vamos evitar padding-bottom para que o "4.5rem" 
+     feche exatamente no final do Header.
+  */
+  padding: 1rem 1rem 1rem 1rem;
+`;
+
+/** Ícone para expandir/recolher no mobile */
+interface IIconWrapperProps {
+  isOpen: boolean;
+}
+
+export const IconWrapper = styled.div<IIconWrapperProps>`
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.8s ease;
+
+  /* Rotaciona o ícone se a seção estiver aberta */
+  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0)")};
+
+  @media (min-width: ${MOBILE_BREAK}) {
+    display: none;
+  }
+`;
+
+/** Região */
 export const Region = styled.h3`
   font-size: clamp(1.2rem, 2vw, 1.3rem);
   font-weight: bold;
   color: ${colors.secondary};
-  margin-bottom: 0.5rem;
 `;
 
-/* Título da Seção */
+/** Título */
 export const SectionTitle = styled.h4`
-  font-size: clamp(1.1rem, 1.8vw, 1.2rem);
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-weight: 600;
   color: ${colors.black};
+  text-overflow: ellipsis;
+
+  margin: 0;
 `;
 
-/* Conteúdo */
+/** Conteúdo do texto */
 export const Content = styled.p`
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: ${colors.darkGray};
+  font-weight: 500;
   line-height: 1.6;
+  margin: 0;
+  padding: 1rem;
 `;
 
-/* Conclusão */
+/** Conclusão */
 export const Conclusion = styled.p`
+  background-color: white;
+  width: 100%;
   font-size: clamp(1rem, 2vw, 1.1rem);
   color: ${colors.primary};
   font-weight: bold;
   text-align: center;
-  /* margin-top: 2rem; */
   padding: 1rem;
   border-top: 2px solid ${colors.secondary};
 `;

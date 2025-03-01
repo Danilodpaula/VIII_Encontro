@@ -38,6 +38,7 @@ const Header = () => {
     <S.HeaderContainer id="header-image">
       {/* Imagem de fundo */}
       <S.SlidingImagesContainer
+        id="inicio"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.5, ease: "easeIn" }}
