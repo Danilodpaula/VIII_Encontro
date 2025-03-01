@@ -14,7 +14,7 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     /* Ajuste se quiser 90vh ou 100vh no mobile */
     height: auto;
     width: 100%;
@@ -29,7 +29,7 @@ export const SlidingImagesContainer = styled(motion.div)`
   display: flex;
   /* gap: 1rem; */
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     height: auto;
   }
 `;
@@ -43,7 +43,7 @@ export const SlidingImage = styled.img`
   flex-shrink: 0;
   /* opacity: 0.6; */
 
-  @media (max-width: 768px) {
+  @media (max-width: 10000px) {
     content: url(${cartazMobile});
     object-fit: cover;
     width: 100vw;
@@ -63,7 +63,7 @@ export const Overlay = styled.div`
   justify-content: flex-end;
   padding: 2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;
@@ -96,7 +96,7 @@ export const HeaderContent = styled.div`
     color: #60625f;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: none;
 
     h1 {
@@ -138,7 +138,7 @@ export const MapButton = styled(motion.a)`
     font-size: 0.5rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     width: auto;
     padding: 16px 4px;
     font-size: 1.15rem;
@@ -191,7 +191,7 @@ export const MobileHeaderContent = styled.div`
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1000px) {
     display: none;
   }
 `;
@@ -285,7 +285,7 @@ export const ModalLink = styled(motion.a)`
     background: ${colors.primary};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     font-size: 0.95rem;
     padding: 14px;
   }
