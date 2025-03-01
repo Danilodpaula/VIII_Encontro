@@ -34,6 +34,33 @@ const Header = () => {
     }
   }, [isModalOpen]);
 
+  useEffect(() => {
+    if (isModalOpen) {
+      setTimeout(() => {
+        const section = document.getElementById("work-submit");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100); // Pequeno delay para garantir que o modal está visível no DOM
+    }
+  }, [isModalOpen]);
+  
+
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ) => {
+    event.preventDefault();
+
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = 100;
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: sectionPosition, behavior: "smooth" });
+    }
+  };
+
   return (
     <S.HeaderContainer id="header-image">
       {/* Imagem de fundo */}
@@ -71,7 +98,13 @@ const Header = () => {
             Ou se preferir, participe conosco!
           </p>
 
-          <S.MapButton style={{ marginTop: "2rem" }} onClick={handleOpenModal}>
+          <S.MapButton
+            style={{ marginTop: "2rem" }}
+            onClick={(e) => {
+              handleNavClick(e, "work-submit");
+              handleOpenModal();
+            }}
+          >
             Submeter trabalho <AiOutlineExport size={24} />
           </S.MapButton>
         </S.MobileHeaderContent>
@@ -118,8 +151,9 @@ const Header = () => {
 
       {/* MODAL (renderiza somente se isModalOpen === true) */}
       {isModalOpen && (
-        <S.ModalOverlay>
+        <S.ModalOverlay onClick={handleCloseModal}>
           <S.ModalContent
+            id="work-submit"
             onClick={(e) => e.stopPropagation()} // Previne fechar ao clicar dentro
           >
             <S.ModalHeader>
