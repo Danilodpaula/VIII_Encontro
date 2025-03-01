@@ -84,9 +84,9 @@ Portanto, trabalhar pelo conhecimento e preservação das línguas é trabalhar 
   Também abordagens sobre fontes para a História da Amazônia que se apresentam sobre e/ou sob o solo, a floresta, as curvas dos rios, ao longo do território amazônico e que têm significado para os grupos passados, como suas ressignificações na atualidade.`,
   },
   {
-    title: "GT 7 - Diversidade cultural,  direitos humanos e inclusão (Tefé)",
+    title: "GT 7 - Diversidade cultural,  direitos humanos e inclusão (Tefé/Manaus)",
     coordination:
-      "Prof. Dr. Yomarley Holanda,  Profa. Dra. Monica Araújo e Prof. Dr. Tiago Santos (PPGICH/UEA)",
+      "Prof. Dr. Yomarley Holanda,  Profa. Dra. Monica Araújo e Prof. Dr. Tiago Santos (PPGICH/UEA); Profa. Dra. Ana Claudia Ribeiro (PPGS/UFAM); Pryscila Nunes Duarte de Amorim(UNINILTON LINS)",
     description: `A proposta do Grupo de Trabalho pretende articular pesquisas e discussões sobre diversidade cultural, direitos humanos e inclusão, enquanto fatores determinantes para a construção de uma sociedade democrática. 
   
   As discussões sobre os direitos humanos são fundamentais para a compreensão da construção da Amazônia, seja no campo da defesa da dignidade da pessoa humana, seja na proteção ambiental, do bem-estar e do ambiente ecologicamente equilibrado.
